@@ -14,7 +14,7 @@ namespace MarsRover.Console.Parsers
 
             if (string.IsNullOrEmpty(rawPlateau)) return new int[0];
 
-            if (int.TryParse(rawPlateau, out int result)) 
+            if (int.TryParse(rawPlateau, out int result))
             {
                 parsedXAndY[0] = result;
             }

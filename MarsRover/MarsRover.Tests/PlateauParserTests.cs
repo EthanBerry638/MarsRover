@@ -40,10 +40,10 @@ public class PlateauParserTests
     }
 
     [Test]
-    public void ParseRawPlateau_ShouldReturnArrayWithSizeOf2ButNoValue_WhenGivenStringWithOneLetter()
+    public void ParseRawPlateau_ShouldReturnEmptyArray_WhenGivenStringWithOneLetter()
     {
         string input = "A";
-        int[] expected = new int[2];
+        int[] expected = [];
 
         int[] result = PlateauParser.ParseRawPlateau(input);
 
