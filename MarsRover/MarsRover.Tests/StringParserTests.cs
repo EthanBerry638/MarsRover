@@ -16,4 +16,15 @@ public class InstructionParserTests
 
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void ParseInstruction_ShouldReturnNothing_WhenGivenInvalidInstruction()
+    {
+        string input = "A";
+        string expected = "";
+
+        string result = InstructionParser.ParseInstruction(input);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
