@@ -12,7 +12,7 @@ namespace MarsRover.Console.Rover
     {
         public Position _startingPosition { get; private set; } = startingPosition;
 
-        public CompassDirection Rotate (CompassDirection start, CompassDirection rotation)
+        public CompassDirection Rotate (CompassDirection start)
         {
             return CompassDirection.N;
         }
