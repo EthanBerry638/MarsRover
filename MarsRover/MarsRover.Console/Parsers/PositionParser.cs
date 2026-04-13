@@ -13,7 +13,7 @@ namespace MarsRover.Console.Parsers
             // TODO: maybe use patern matching to check the data types of each part of the input
             if (string.IsNullOrEmpty(rawPosition)) return "";
 
-            return "";
+            if (rawPosition.Length > 0) return "";
         }
     }
 }
