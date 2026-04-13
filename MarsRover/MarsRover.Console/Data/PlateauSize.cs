@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace MarsRover.Console.Data
 {
-    public record PlateauSize(int x, int y);
+    public record PlateauSize(int X, int Y);
 }
