@@ -11,6 +11,7 @@ namespace MarsRover.Console.Parsers
         public static string RawPositionParser(string rawPosition)
         {
             // TODO: maybe use patern matching to check the data types of each part of the input
+            return "";
         }
     }
 }
