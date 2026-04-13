@@ -1,4 +1,6 @@
 ﻿using MarsRover.Console.Parsers;
+using MarsRover.Console.Data;
+using MarsRover.Console.Directions;
 using NUnit.Framework;
 
 namespace MarsRover.Tests;
@@ -134,5 +136,16 @@ public class PositionParserTests
         bool result = PositionParser.IsValidPosition(input);
 
         Assert.That(result, Is.True);
+    }
+
+    [Test]
+    public void GetPosition_ShouldReturnExpected_WhenGivenAParsedString()
+    {
+        string input = "1 2 N";
+        Position expeted = new(1, 2, CompassDirection.N);
+
+        Position result = PositionParser.GetPosition(input);
+
+        Assert.That(result, Is.EqualTo(expeted));
     }
 }
