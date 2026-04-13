@@ -28,9 +28,9 @@ namespace MarsRover.Console.Parsers
             return sb.ToString();
         }
 
-        private static List<Instruction> GetInstruction(string parsedInstruction)
+        public static List<Instruction> GetInstructions(string parsedInstruction)
         {
-            
+            return new List<Instruction>();
         }
     }
 }
