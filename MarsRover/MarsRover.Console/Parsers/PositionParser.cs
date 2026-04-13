@@ -39,5 +39,10 @@ namespace MarsRover.Console.Parsers
 
             return true;
         }
+
+        public static Position GetPosition(string parsedPosition)
+        {
+            
+        }
     }
 }
