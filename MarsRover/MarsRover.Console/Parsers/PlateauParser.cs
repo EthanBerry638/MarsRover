@@ -12,7 +12,7 @@ namespace MarsRover.Console.Parsers
         {
             int[] parsedXAndY = new int[2];
 
-            if (string.IsNullOrEmpty(rawPlateau)) return parsedXAndY;
+            if (string.IsNullOrEmpty(rawPlateau)) return new int[0];
 
             if (int.TryParse(rawPlateau, out int result)) 
             {
