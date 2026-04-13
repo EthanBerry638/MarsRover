@@ -14,9 +14,9 @@ namespace MarsRover.Console.Rover
 
         public CompassDirection Rotate (Instruction instruction)
         {
-            if (instruction == Instruction.M) return _startingPosition.facing;
+            if (instruction == Instruction.M) return _startingPosition.Facing;
 
-            int currentDir = (int)_startingPosition.facing - 1;
+            int currentDir = (int)_startingPosition.Facing - 1;
             int newDir;
 
             if (instruction == Instruction.L)
@@ -28,8 +28,8 @@ namespace MarsRover.Console.Rover
                 newDir = (currentDir + 1) % 4;
             }
 
-            _startingPosition.facing = (CompassDirection)(newDir + 1);
-            return _startingPosition.facing; 
+            _startingPosition.Facing = (CompassDirection)(newDir + 1);
+            return _startingPosition.Facing; 
         }
     }
 }
