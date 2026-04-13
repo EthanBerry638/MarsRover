@@ -13,7 +13,7 @@ namespace MarsRover.Console.Parsers
         {
             if (string.IsNullOrWhiteSpace(rawInstruction)) return "";
 
-            string parsedString = "";
+            StringBuilder sb = new();
 
             foreach (char letter in rawInstruction)
             {
@@ -21,11 +21,11 @@ namespace MarsRover.Console.Parsers
 
                 if (upperLetter == 'L' || upperLetter == 'M' || upperLetter == 'R')
                 {
-                    parsedString += upperLetter;
+                   sb.Append(upperLetter);
                 }
             }
 
-            return parsedString;
+            return sb.ToString();
         }
     }
 }
