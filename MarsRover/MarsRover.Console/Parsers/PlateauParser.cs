@@ -27,7 +27,7 @@ namespace MarsRover.Console.Parsers
 
         public static PlateauSize GetPlateauSize(int[] parsedPlateau)
         {
-
+            return new PlateauSize(0, 0);
         }
     }
 }

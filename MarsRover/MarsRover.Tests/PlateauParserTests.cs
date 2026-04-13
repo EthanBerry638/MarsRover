@@ -92,4 +92,12 @@ public class PlateauParserTests
 
         Assert.That(expected, Is.EqualTo(result));
     }
+
+    [Test]
+    public void GetPlateauSize_ShouldThrowExceptionWhenGivenEmptyArray()
+    {
+        int[] input = [];
+
+        var ex = Assert.Throws<ArgumentException>(() => PlateauParser.GetPlateauSize(input));
+    }
 }
