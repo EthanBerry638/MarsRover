@@ -14,7 +14,7 @@ namespace MarsRover.Console.Rover
 
         public CompassDirection Rotate (Instruction instruction)
         {
-            return CompassDirection.N;
+            return CompassDirection.E;
         }
     }
 }
