@@ -8,5 +8,9 @@ namespace MarsRover.Console.Parsers
 {
     public static class PlateauParser
     {
+        public static int[] ParseRawPlateau(string rawPlateau)
+        {
+            
+        }
     }
 }
