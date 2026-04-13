@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MarsRover.Console.Directions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,10 @@ namespace MarsRover.Console.Parsers
 
             parts[2] = parts[2].ToUpper();
 
-            if (int.TryParse(parts[0], out int value) && int.TryParse(parts[1], out int value2))
+            if (int.TryParse(parts[0], out int value) && int.TryParse(parts[1], out int value2)
+                && Enum.TryParse(parts[2], out CompassDirection direction))
             {
-                return $"{value} {value2} {parts[2]}";
+                return $"{value} {value2} {direction.ToString()}";
             }
 
             return "";
