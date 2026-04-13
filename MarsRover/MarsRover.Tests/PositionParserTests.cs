@@ -48,4 +48,15 @@ public class PositionParserTests
 
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void RawPositionParser_ShouldReturnEmptyString_WhenGivenCorrectLengthStringButIncorrectFormat()
+    {
+        string? input = "A 2 N";
+        string expected = "";
+
+        string result = PositionParser.RawPositionParser(input);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
