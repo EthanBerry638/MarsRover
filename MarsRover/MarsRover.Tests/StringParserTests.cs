@@ -104,4 +104,15 @@ public class InstructionParserTests
 
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void ParseInstructions_ShouldOnlyReturnValidLetters_WhenGivenAMixOfValidAndInvalidLetters()
+    {
+        string input = "jssjefnjLajjwjRaderrrM";
+        string expected = "LRRRRM";
+
+        string result = InstructionParser.ParseInstruction(input);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
