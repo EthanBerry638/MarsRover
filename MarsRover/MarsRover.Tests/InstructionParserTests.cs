@@ -115,4 +115,15 @@ public class InstructionParserTests
 
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void GetInstructions_ShouldReturnEmptyList_WhenGivenEmptyString()
+    {
+        string input = "";
+        List<Instruction> expected = new List<Instruction>();
+
+        List<Instruction> result = InstructionParser.GetInstructions(input);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
