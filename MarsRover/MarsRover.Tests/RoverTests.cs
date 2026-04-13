@@ -40,7 +40,7 @@ public class RoverTests
         Position position = new Position(3, 3, CompassDirection.N);
         var rover = new Rover(position);
         var rotation = Instruction.M;
-        var expected = CompassDirection.W;
+        var expected = CompassDirection.N;
 
         CompassDirection result = rover.Rotate(rotation);
 
