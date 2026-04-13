@@ -30,9 +30,9 @@ namespace MarsRover.Console.Parsers
             return "";
         }
 
-        public static Position GetPosition(string parsedPosition)
+        public static bool IsValidPosition(string parsedPosition)
         {
-            
+            return true;
         }
     }
 }

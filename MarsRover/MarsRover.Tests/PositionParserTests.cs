@@ -114,4 +114,15 @@ public class PositionParserTests
 
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void IsValidPosition_ShouldReturnFalse_WhenGivenAnEmptyString()
+    {
+        string input = "";
+        bool expected = false;
+
+        bool result = PositionParser.IsValidPosition(input);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
