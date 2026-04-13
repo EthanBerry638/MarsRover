@@ -34,7 +34,21 @@ namespace MarsRover.Console.Parsers
 
             if (parsedInstruction == "") return instructions;
 
-            instructions.Add(Instruction.L);
+            foreach (char letter in parsedInstruction)
+            {
+                switch (letter)
+                {
+                    case 'L':
+                        instructions.Add(Instruction.L);
+                        break;
+                    case 'M':
+                        instructions.Add(Instruction.M);
+                        break;
+                    case 'R':
+                        instructions.Add(Instruction.R);
+                        break;
+                }
+            }
 
             return instructions;
         }
