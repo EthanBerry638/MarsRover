@@ -12,7 +12,11 @@ namespace MarsRover.Console.Parsers
         {
             if (string.IsNullOrEmpty(rawPosition)) return "";
   
+            
             string[] parts = rawPosition.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            if (parts.Length != 3) return "";
+
             parts[2] = parts[2].ToUpper();
 
             if (int.TryParse(parts[0], out int value) && int.TryParse(parts[1], out int value2))
