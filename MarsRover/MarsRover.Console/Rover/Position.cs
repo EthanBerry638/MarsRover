@@ -1,0 +1,11 @@
+﻿using MarsRover.Console.Directions;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MarsRover.Console.Rover
+{
+    public record Position (int x, int y, CompassDirections facing);
+}
