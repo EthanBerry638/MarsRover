@@ -18,6 +18,17 @@ public class InstructionParserTests
     }
 
     [Test]
+    public void ParseInstruction_ShouldReturnEmpty_WhenGivenNull()
+    {
+        string input = null;
+        string expected = "";
+
+        string result = InstructionParser.ParseInstruction(input);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
+
+    [Test]
     public void ParseInstruction_ShouldReturnNothing_WhenGivenSingleInvalidInstruction()
     {
         string input = "A";
