@@ -137,4 +137,23 @@ public class InstructionParserTests
 
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void GetInstructions_ShouldReturnListWithMultipleItems_WhenGivenMultipleInstructions()
+    {
+        string input = "LLRMRL";
+        List<Instruction> expected = new List<Instruction>
+        {
+            Instruction.L,
+            Instruction.L,
+            Instruction.R,
+            Instruction.M,
+            Instruction.R,
+            Instruction.L
+        };
+
+        List<Instruction> result = InstructionParser.GetInstructions(input);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
