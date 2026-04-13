@@ -35,7 +35,7 @@ namespace MarsRover.Console.Parsers
                 throw new ArgumentException();
             }
 
-            return new PlateauSize(1, 2);
+            return new PlateauSize(parsedPlateau[0], parsedPlateau[1]);
         }
     }
 }
