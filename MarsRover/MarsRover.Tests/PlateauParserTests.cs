@@ -94,6 +94,17 @@ public class PlateauParserTests
     }
 
     [Test]
+    public void ParseRawPlateau_ShouldReturnEmptyArray_WhenGivenTwoNegativeNumbers()
+    {
+        string input = "-4 -3";
+        int[] expected = [];
+
+        int[] result = PlateauParser.ParseRawPlateau(input);
+
+        Assert.That(expected, Is.EqualTo(result));
+    }
+
+    [Test]
     public void GetPlateauSize_ShouldThrowExceptionWhenGivenEmptyArray()
     {
         int[] input = [];
