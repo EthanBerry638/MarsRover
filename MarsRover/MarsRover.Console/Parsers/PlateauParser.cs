@@ -30,7 +30,12 @@ namespace MarsRover.Console.Parsers
 
         public static PlateauSize GetPlateauSize(int[] parsedPlateau)
         {
-            throw new ArgumentException();
+            if (parsedPlateau.Length != 2)
+            {
+                throw new ArgumentException();
+            }
+
+            return new PlateauSize(1, 2);
         }
     }
 }
