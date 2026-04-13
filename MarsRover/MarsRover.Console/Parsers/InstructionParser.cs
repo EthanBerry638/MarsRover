@@ -13,13 +13,19 @@ namespace MarsRover.Console.Parsers
         {
             if (string.IsNullOrWhiteSpace(rawInstruction)) return "";
 
-            string parsedString = rawInstruction.ToUpper() switch
+            string parsedString = "";
+
+            foreach (char letter in rawInstruction)
             {
-                "L" => "L",
-                "R" => "R",
-                "M" => "M",
-                _ => ""
-            };
+                char currentLetter = char.ToUpper(letter) switch
+                {
+                    'L' => 'L',
+                    'M' => 'M',
+                    'R' => 'R',
+                };
+
+                parsedString += currentLetter;
+            }
 
             return parsedString;
         }
