@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MarsRover.Console.Data;
 
 namespace MarsRover.Console.Parsers
 {
@@ -22,6 +23,11 @@ namespace MarsRover.Console.Parsers
             }
 
             return [];
+        }
+
+        public static PlateauSize GetPlateauSize(int[] parsedPlateau)
+        {
+
         }
     }
 }
