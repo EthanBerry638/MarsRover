@@ -60,4 +60,15 @@ public class InstructionParserTests
 
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    [Test]
+    [TestCase("L", "L")]
+    [TestCase("R", "R")]
+    [TestCase("M", "M")]
+    public void ParseInstruction_ShouldReturnSingleInstruction_WhenGivenSingleUpperCaseValidInstruction(string input, string expected)
+    {
+        string result = InstructionParser.ParseInstruction(input);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
