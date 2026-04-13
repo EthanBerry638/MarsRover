@@ -15,4 +15,15 @@ public class PositionParserTests
 
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void RawPositionParser_ShouldReturnEmptyString_WhenGivenEmptyString()
+    {
+        string? input = "";
+        string expected = "";
+
+        string result = PositionParser.RawPositionParser(input);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
