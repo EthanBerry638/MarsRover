@@ -16,5 +16,15 @@ public class PlateauParserTests
         Assert.That(expected, Is.EqualTo(result));
     }
 
-    
+    [Test]
+    public void ParseRawPlateau_ShouldReturnArrayWithSizeOf2But1Value_WhenGivenStringWithOneNumber()
+    {
+        string input = "3";
+        int[] expected = new int[2];
+        expected[0] = 3;
+
+        int [] result = PlateauParser.ParseRawPlateau(input);
+
+        Assert.That(expected, Is.EqualTo(result));
+    }
 }
