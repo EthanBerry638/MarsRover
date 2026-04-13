@@ -10,7 +10,9 @@ namespace MarsRover.Console.Parsers
     {
         public static int[] ParseRawPlateau(string rawPlateau)
         {
-            return new int[2];
+            int[] parsedXAndY = new int[2];
+
+            return parsedXAndY;
         }
     }
 }
