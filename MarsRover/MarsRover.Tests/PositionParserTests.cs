@@ -37,4 +37,15 @@ public class PositionParserTests
 
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void RawPositionParser_ShouldReturnInput_WhenGivenCorrectlyFormattedString()
+    {
+        string? input = "1 2 N";
+        string expected = "1 2 N";
+
+        string result = PositionParser.RawPositionParser(input);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
