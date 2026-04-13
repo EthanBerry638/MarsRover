@@ -48,4 +48,15 @@ public class PlateauParserTests
 
         Assert.That(expected, Is.EqualTo(result));
     }
+
+    [Test]
+    public void ParseRawPlateau_ShouldReturnArrayWith2Numbers_WhenGivenStringWithTwoNumbersSeperatedBySpace()
+    {
+        string input = "5 5";
+        int[] expected = [5, 5];
+
+        int[] result = PlateauParser.ParseRawPlateau(input);
+
+        Assert.That(expected, Is.EqualTo(result));
+    }
 }
