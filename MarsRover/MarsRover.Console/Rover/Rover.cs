@@ -14,7 +14,14 @@ namespace MarsRover.Console.Rover
 
         public CompassDirection Rotate (Instruction instruction)
         {
-            return CompassDirection.E;
+            if (instruction == Instruction.L)
+            {
+                return CompassDirection.W;
+            }
+            else
+            {
+                return CompassDirection.E;
+            }
         }
     }
 }
