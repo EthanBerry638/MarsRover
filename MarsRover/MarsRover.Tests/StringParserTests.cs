@@ -82,4 +82,15 @@ public class InstructionParserTests
 
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void ParseInstruction_ShouldReturnEveryLetter_WhenGivenMultipleCorrectLetters()
+    {
+        string input = "LRM";
+        string expected = "LRM";
+
+        string result = InstructionParser.ParseInstruction(input);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
