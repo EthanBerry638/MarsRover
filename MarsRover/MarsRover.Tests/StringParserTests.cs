@@ -18,10 +18,21 @@ public class InstructionParserTests
     }
 
     [Test]
-    public void ParseInstruction_ShouldReturnNothing_WhenGivenInvalidInstruction()
+    public void ParseInstruction_ShouldReturnNothing_WhenGivenSingleInvalidInstruction()
     {
         string input = "A";
         string expected = "";
+
+        string result = InstructionParser.ParseInstruction(input);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
+
+    [Test]
+    public void ParseInstruction_ShouldReturnSingleInstruction_WhenGivenSingleValidInstruction()
+    {
+        string input = "L";
+        string expected = "L";
 
         string result = InstructionParser.ParseInstruction(input);
 
