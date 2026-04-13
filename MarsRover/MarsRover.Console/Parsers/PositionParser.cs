@@ -14,10 +14,10 @@ namespace MarsRover.Console.Parsers
 
             if (rawPosition.Length == 5)
             {
-                if (rawPosition[0] == '1' &&  rawPosition[2] == '2' && rawPosition[4] == 'N')
-                {
-                    return rawPosition;
-                }
+                string[] parts = rawPosition.Split(' ');
+                parts[2] = parts[2].ToUpper();
+                
+                return $"{parts[0]} {parts[1]} {parts[2]}"; 
             }
 
             return "";
