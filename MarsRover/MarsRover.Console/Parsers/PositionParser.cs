@@ -1,4 +1,5 @@
 ﻿using MarsRover.Console.Directions;
+using MarsRover.Console.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,11 @@ namespace MarsRover.Console.Parsers
             }
 
             return "";
+        }
+
+        public static Position GetPosition(string parsedPosition)
+        {
+            
         }
     }
 }
