@@ -11,6 +11,8 @@ namespace MarsRover.Console.Parsers
     {
         public static string ParseInstruction(string rawInstruction)
         {
+            if (string.IsNullOrWhiteSpace(rawInstruction)) return "";
+
             if (rawInstruction.ToUpper() == Instruction.L.ToString())
             {
                 return "L";
