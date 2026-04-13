@@ -20,4 +20,17 @@ public class RoverTests
 
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void Rotate_ShouldReturnWest_WhenGivenARotaionOfLeftFromNorth()
+    {
+        Position position = new Position(3, 3, CompassDirection.N);
+        var rover = new Rover(position);
+        var rotation = Instruction.L;
+        var expected = CompassDirection.W;
+
+        CompassDirection result = rover.Rotate(rotation);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
