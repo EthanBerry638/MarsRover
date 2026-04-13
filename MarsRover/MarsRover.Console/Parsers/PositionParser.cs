@@ -23,7 +23,7 @@ namespace MarsRover.Console.Parsers
             if (int.TryParse(parts[0], out int value) && int.TryParse(parts[1], out int value2)
                 && Enum.TryParse(parts[2], out CompassDirection direction))
             {
-                return $"{value} {value2} {direction.ToString()}";
+                if (value >= 0 && value2 >= 0) return $"{value} {value2} {direction.ToString()}";
             }
 
             return "";
