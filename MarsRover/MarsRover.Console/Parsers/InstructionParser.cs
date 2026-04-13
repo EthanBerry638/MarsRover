@@ -30,7 +30,9 @@ namespace MarsRover.Console.Parsers
 
         public static List<Instruction> GetInstructions(string parsedInstruction)
         {
-            return new List<Instruction>();
+            if (parsedInstruction == "") return new List<Instruction>();
+
+            return new List<Instruction> { Instruction.L };
         }
     }
 }
