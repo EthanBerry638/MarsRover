@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using MarsRover.Console.Data;
 using MarsRover.Console.Parsers;
 
 namespace MarsRover.Tests;
@@ -110,5 +111,16 @@ public class PlateauParserTests
         int[] input = [];
 
         var ex = Assert.Throws<ArgumentException>(() => PlateauParser.GetPlateauSize(input));
+    }
+
+    [Test]
+    public void GetPlateauSize_ShouldMakeNewPlateauSize_WhenGivenArrayWith2Numbers()
+    {
+        int[] input = [5, 5];
+        PlateauSize expected = new(5, 5);
+
+        PlateauSize result = PlateauParser.GetPlateauSize(input);
+
+        Assert.That(expected, Is.EqualTo(result));
     }
 }
