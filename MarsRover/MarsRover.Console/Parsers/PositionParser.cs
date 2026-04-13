@@ -21,7 +21,7 @@ namespace MarsRover.Console.Parsers
 
             if (int.TryParse(parts[0], out int value) && int.TryParse(parts[1], out int value2))
             {
-                return $"{parts[0]} {parts[1]} {parts[2]}";
+                return $"{value} {value2} {parts[2]}";
             }
 
             return "";
