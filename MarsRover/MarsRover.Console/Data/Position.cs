@@ -7,5 +7,10 @@ using System.Threading.Tasks;
 
 namespace MarsRover.Console.Data
 {
-    public record Position (int x, int y, CompassDirection facing);
+    public record Position (int x, int y, CompassDirection facing)
+    {
+        public int X = x;
+        public int Y = y;
+        public CompassDirection Facing { get; set; } = facing;
+    }
 }
