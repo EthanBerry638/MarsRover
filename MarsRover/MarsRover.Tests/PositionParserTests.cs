@@ -143,8 +143,9 @@ public class PositionParserTests
     {
         string input = "1 2 N";
         Position expeted = new(1, 2, CompassDirection.N);
+        PlateauSize plateau = new(5, 5);
 
-        Position result = PositionParser.GetPosition(input);
+        Position result = PositionParser.GetPosition(input, plateau);
 
         Assert.That(result, Is.EqualTo(expeted));
     }
