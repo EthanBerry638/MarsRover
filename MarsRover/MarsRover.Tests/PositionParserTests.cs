@@ -92,4 +92,15 @@ public class PositionParserTests
 
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void RawPositionParser_ShouldReturnEmptyString_WhenGivenANegativeNumber()
+    {
+        string input = "-1 5 E";
+        string expected = "";
+
+        string result = PositionParser.RawPositionParser(input);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
