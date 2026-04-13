@@ -7,7 +7,7 @@ namespace MarsRover.Tests;
 public class InstructionParserTests
 {
     [Test]
-    public void ParseInstruction_ShouldReturnNull_WhenGivenEmptyString()
+    public void ParseInstruction_ShouldReturnEmpty_WhenGivenEmptyString()
     {
         string input = "";
         string expected = "";
