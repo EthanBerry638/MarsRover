@@ -35,7 +35,9 @@ namespace MarsRover.Console.Parsers
             /* All parsing has happened in rawpositionparse. It will return empty if invalid so that's all we check.
             // This will be used later so instead of throwing an exception we can call this before we try to make a 
             record of type Position. */
-            return false;
+            if (parsedPosition == "") return false;
+
+            return true;
         }
     }
 }
