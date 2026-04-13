@@ -19,7 +19,10 @@ namespace MarsRover.Console.Parsers
 
             if (int.TryParse(parts[0], out int x) && int.TryParse(parts[1], out int y))
             {
-                return [x, y];
+                if (x > 0 && y > 0)
+                {
+                    return [x, y];
+                }
             }
 
             return [];
