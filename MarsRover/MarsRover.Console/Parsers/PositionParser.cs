@@ -40,7 +40,7 @@ namespace MarsRover.Console.Parsers
             return true;
         }
 
-        public static Position GetPosition(string parsedPosition)
+        public static Position GetPosition(string parsedPosition, PlateauSize plateau)
         {
             string[] parts = parsedPosition.Split(' ');
 

@@ -142,11 +142,21 @@ public class PositionParserTests
     public void GetPosition_ShouldReturnExpected_WhenGivenAParsedString()
     {
         string input = "1 2 N";
-        Position expeted = new(1, 2, CompassDirection.N);
+        Position expected = new(1, 2, CompassDirection.N);
         PlateauSize plateau = new(5, 5);
 
         Position result = PositionParser.GetPosition(input, plateau);
 
-        Assert.That(result, Is.EqualTo(expeted));
+        Assert.That(result, Is.EqualTo(expected));
+    }
+
+    [Test]
+    public void GetPosition_ShouldThrowException_WhenGivenAParsedStringButThePositionIsNotOnTheGrind()
+    {
+        string input = "20 20 N";
+        Position expected = new(20, 20, CompassDirection.N);
+        PlateauSize plateau = new(5, 5);
+
+        Assert.Throws<ArgumentException>(() => PositionParser.GetPosition(input, plateau));
     }
 }

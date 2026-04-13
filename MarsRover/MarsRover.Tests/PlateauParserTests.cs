@@ -110,7 +110,7 @@ public class PlateauParserTests
     {
         int[] input = [];
 
-        var ex = Assert.Throws<ArgumentException>(() => PlateauParser.GetPlateauSize(input));
+        Assert.Throws<ArgumentException>(() => PlateauParser.GetPlateauSize(input));
     }
 
     [Test]
