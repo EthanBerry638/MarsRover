@@ -12,7 +12,7 @@ namespace MarsRover.Console.Parsers
         {
             if (string.IsNullOrEmpty(rawPlateau)) return [];
 
-            string[] parts = rawPlateau.Split(' ');
+            string[] parts = rawPlateau.Split(' ', StringSplitOptions.TrimEntries);
 
             if (parts.Length != 2) return [];
 
