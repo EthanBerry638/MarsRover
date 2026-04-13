@@ -2,7 +2,7 @@
 
 namespace MarsRover.Tests;
 
-public class StringParserTests
+public class InstructionParserTests
 {
     
 }

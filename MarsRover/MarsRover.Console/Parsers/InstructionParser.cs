@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarsRover.Console.Parsers
 {
-    public class StringParser
+    public class InstructionParser
     {
     }
 }
