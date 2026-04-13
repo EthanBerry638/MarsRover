@@ -17,14 +17,12 @@ namespace MarsRover.Console.Parsers
 
             foreach (char letter in rawInstruction)
             {
-                char currentLetter = char.ToUpper(letter) switch
-                {
-                    'L' => 'L',
-                    'M' => 'M',
-                    'R' => 'R',
-                };
+                char upperLetter = char.ToUpper(letter);
 
-                parsedString += currentLetter;
+                if (upperLetter == 'L' || upperLetter == 'M' || upperLetter == 'R')
+                {
+                    parsedString += upperLetter;
+                }
             }
 
             return parsedString;
