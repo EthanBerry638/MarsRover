@@ -27,5 +27,10 @@ namespace MarsRover.Console.Parsers
 
             return sb.ToString();
         }
+
+        private static List<Instruction> GetInstruction(string parsedInstruction)
+        {
+            
+        }
     }
 }
