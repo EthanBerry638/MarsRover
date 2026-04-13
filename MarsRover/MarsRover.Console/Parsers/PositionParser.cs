@@ -42,7 +42,11 @@ namespace MarsRover.Console.Parsers
 
         public static Position GetPosition(string parsedPosition)
         {
-            
+            string[] parts = parsedPosition.Split(' ');
+
+            Enum.TryParse(parts[2], out CompassDirection direction);
+
+            return new Position(int.Parse(parts[0]), int.Parse(parts[1]), direction);
         }
     }
 }
