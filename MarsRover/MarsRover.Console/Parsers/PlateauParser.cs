@@ -10,9 +10,18 @@ namespace MarsRover.Console.Parsers
     {
         public static int[] ParseRawPlateau(string rawPlateau)
         {
-            int[] parsedXAndY = [];
+            if (string.IsNullOrEmpty(rawPlateau)) return new int[0];
 
-            return parsedXAndY;
+            string[] parts = rawPlateau.Split(' ');
+
+            if (parts.Length != 2) return new int[0];
+
+            if (int.TryParse(parts[0], out int x) && int.TryParse(parts[1], out int y))
+            {
+                return new int[] { x, y };
+            }
+
+            return new int[0];
         }
     }
 }
