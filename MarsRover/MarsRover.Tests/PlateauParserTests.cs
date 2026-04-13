@@ -9,7 +9,7 @@ public class PlateauParserTests
     public void ParseRawPlateau_ShouldReturnEmptyArray_WhenGivenEmptyString()
     {
         string input = "";
-        int[] expected = new int[0];
+        int[] expected = [];
 
         int[] result = PlateauParser.ParseRawPlateau(input);
 
@@ -19,8 +19,8 @@ public class PlateauParserTests
     [Test]
     public void ParseRawPlateau_ShouldReturnEmptyArray_WhenGivenNull()
     {
-        string input = null;
-        int[] expected = new int[0];
+        string? input = null;
+        int[] expected = [];
 
         int[] result = PlateauParser.ParseRawPlateau(input);
 
@@ -28,11 +28,10 @@ public class PlateauParserTests
     }
 
     [Test]
-    public void ParseRawPlateau_ShouldReturnArrayWithSizeOf2But1Value_WhenGivenStringWithOneNumber()
+    public void ParseRawPlateau_ShouldReturnEmptyArray_WhenGivenStringWithOneNumber()
     {
         string input = "3";
-        int[] expected = new int[2];
-        expected[0] = 3;
+        int[] expected = [];
 
         int [] result = PlateauParser.ParseRawPlateau(input);
 
