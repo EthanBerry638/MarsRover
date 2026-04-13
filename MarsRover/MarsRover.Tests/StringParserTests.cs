@@ -93,4 +93,15 @@ public class InstructionParserTests
 
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void ParseInstruction_ShouldReturnNothing_WhenGivenMultipleIncorrectCorrectLetters()
+    {
+        string input = "OGTIKNSFDBG";
+        string expected = "";
+
+        string result = InstructionParser.ParseInstruction(input);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
