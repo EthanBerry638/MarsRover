@@ -11,6 +11,7 @@ namespace MarsRover.Console.Parsers
         public static int[] ParseRawPlateau(string rawPlateau)
         {
             int[] parsedXAndY = new int[2];
+            parsedXAndY[0] = int.Parse(rawPlateau);
 
             return parsedXAndY;
         }
