@@ -6,10 +6,10 @@ namespace MarsRover.Tests;
 public class PlateauParserTests
 {
     [Test]
-    public void ParseRawPlateau_ShouldReturnArrayWithSizeOf2ButNoValues_WhenGivenEmptyString()
+    public void ParseRawPlateau_ShouldReturnEmptyArray_WhenGivenEmptyString()
     {
         string input = "";
-        int[] expected = new int[2];
+        int[] expected = new int[0];
 
         int[] result = PlateauParser.ParseRawPlateau(input);
 
@@ -17,10 +17,10 @@ public class PlateauParserTests
     }
 
     [Test]
-    public void ParseRawPlateau_ShouldReturnArrrayWithSizeOf2ButNoValues_WhenGivenNull()
+    public void ParseRawPlateau_ShouldReturnEmptyArray_WhenGivenNull()
     {
         string input = null;
-        int[] expected = new int[2];
+        int[] expected = new int[0];
 
         int[] result = PlateauParser.ParseRawPlateau(input);
 
