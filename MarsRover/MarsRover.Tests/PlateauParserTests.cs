@@ -6,7 +6,7 @@ namespace MarsRover.Tests;
 public class PlateauParserTests
 {
     [Test]
-    public void ParseRawPlateau_ShouldReturnArrayWith2Elements_WhenGivenEmptyString()
+    public void ParseRawPlateau_ShouldReturnArrayWithSizeOf2ButNoValues_WhenGivenEmptyString()
     {
         string input = "";
         int[] expected = new int[2];
@@ -15,4 +15,6 @@ public class PlateauParserTests
 
         Assert.That(expected, Is.EqualTo(result));
     }
+
+    
 }
