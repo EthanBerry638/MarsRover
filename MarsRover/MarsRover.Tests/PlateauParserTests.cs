@@ -59,4 +59,15 @@ public class PlateauParserTests
 
         Assert.That(expected, Is.EqualTo(result));
     }
+
+    [Test]
+    public void ParseRawPlateau_ShouldReturnEmptyArray_WhenGivenThreeNumbers()
+    {
+        string input = "5 5 5";
+        int[] expected = [];
+
+        int[] result = PlateauParser.ParseRawPlateau(input);
+
+        Assert.That(expected, Is.EqualTo(result));
+    }
 }
