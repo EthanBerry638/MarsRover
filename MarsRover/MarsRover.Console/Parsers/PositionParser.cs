@@ -34,6 +34,8 @@ namespace MarsRover.Console.Parsers
         {
             string[] parts = parsedPosition.Split(' ');
 
+            if (plateau.x < int.Parse(parts[0]) || plateau.y < int.Parse(parts[1])) throw new ArgumentException();
+
             Enum.TryParse(parts[2], out CompassDirection direction);
 
             return new Position(int.Parse(parts[0]), int.Parse(parts[1]), direction);
