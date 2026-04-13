@@ -126,4 +126,15 @@ public class InstructionParserTests
 
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void GetInstructions_ShouldReturnListWithOneItem_WhenGivenOneInstruction()
+    {
+        string input = "L";
+        List<Instruction> expected = new List<Instruction> { Instruction.L };
+
+        List<Instruction> result = InstructionParser.GetInstructions(input);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
