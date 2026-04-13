@@ -17,6 +17,17 @@ public class PlateauParserTests
     }
 
     [Test]
+    public void ParseRawPlateau_ShouldReturnArrrayWithSizeOf2ButNoValues_WhenGivenNull()
+    {
+        string input = null;
+        int[] expected = new int[2];
+
+        int[] result = PlateauParser.ParseRawPlateau(input);
+
+        Assert.That(expected, Is.EqualTo(result));
+    }
+
+    [Test]
     public void ParseRawPlateau_ShouldReturnArrayWithSizeOf2But1Value_WhenGivenStringWithOneNumber()
     {
         string input = "3";
