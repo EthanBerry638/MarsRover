@@ -11,6 +11,10 @@ namespace MarsRover.Console.Parsers
     {
         public static string ParseInstruction(string rawInstruction)
         {
+            if (rawInstruction == "L")
+            {
+                return "L";
+            }
             return "";
         }
     }
