@@ -1,0 +1,19 @@
+# --- BUILD OUTPUTS ---
+[Bb]in/
+obj/
+ARM/
+ARM64/
+x64/
+x86/
+
+# --- IDE SETTINGS ---
+.vs/
+.vscode/
+*.user
+
+# --- NUGET PACKAGES ---
+[Pp]ackages/
+*.nupkg
+
+# --- OS JUNK ---
+Thumbs.db
