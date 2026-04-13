@@ -1,6 +1,6 @@
 ﻿namespace MarsRover.Console.Directions
 {
-    public enum CompassDirections
+    public enum CompassDirection
     {
         N,
         E,
