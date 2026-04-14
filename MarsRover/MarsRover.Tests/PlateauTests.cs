@@ -61,7 +61,6 @@ namespace MarsRover.Tests
         public void GetCollidingAxis_ShouldReturnXAxisOnly_WhenOnlyXPositionIsOutOfBounds()
         {
             Position testPosition = new(10, 3, CompassDirection.N);
-            Rover testRover = new(testPosition);
 
             PlateauSize testPlateauSize = new(5, 5);
             Plateau testPlateau = new(testPlateauSize);
@@ -71,7 +70,7 @@ namespace MarsRover.Tests
                 { "X", 10 }
             };
 
-            Dictionary<string, int> result = testPlateau.GetCollidingAxis(testRover);
+            Dictionary<string, int> result = testPlateau.GetCollidingAxis(testPosition); 
 
             Assert.That(result, Is.EqualTo(expected));
         }

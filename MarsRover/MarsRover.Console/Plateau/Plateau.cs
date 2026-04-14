@@ -13,7 +13,7 @@ namespace MarsRover.Console.Plateau
             return false;
         }
 
-        public Dictionary<string, int> GetCollidingAxis(Rover rover)
+        public Dictionary<string, int> GetCollidingAxis(Position position) // position will be given by the rover. this will be called in the move method
         {
             return new Dictionary<string, int>();
         }
