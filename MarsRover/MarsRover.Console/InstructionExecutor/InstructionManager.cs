@@ -23,11 +23,16 @@ namespace MarsRover.Console.InstructionExecutor
 
                 if (plateau.IsBordering(rover.CurrentPosition))
                 {
-                    Dictionary<string, int> borderingAxis = plateau.GetCollidingAxis(rover.CurrentPosition);
+                    Dictionary<string, int> borderingAxis = plateau.GetCollidingAxis(rover.CurrentPosition);           
                 };
             }
 
             return rover.CurrentPosition;
+        }
+
+        public static Position CorrectCollision(Dictionary<string, int> borderingAxis, Rover rover)
+        {
+            
         }
     }
 }
