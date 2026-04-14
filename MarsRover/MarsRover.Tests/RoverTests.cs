@@ -98,4 +98,17 @@ public class RoverTests
 
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void Move_ShouldMoveDownOneCoordinateOnYAxis_WhenGivenOneMoveCommandAndFacingSouth()
+    {
+        Position position = new Position(0, 1, CompassDirection.S);
+        var rover = new Rover(position);
+        Instruction testInstruction = Instruction.M;
+        var expected = new Position(0, 0, CompassDirection.S);
+
+        Position result = rover.Move(testInstruction);
+
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
