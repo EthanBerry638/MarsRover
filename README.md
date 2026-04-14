@@ -4,10 +4,10 @@ A console app for moving Rovers around Mars. This project implements a coordinat
 
 ## Features
 
-[Done] Input Parsing: Converts string inputs into usable data for the other parts of the program to use.
+[Done] Input Parsing: Converts string inputs into usable data for the other parts of the program to use.<br>
 [Done] Rotation: The rover can rotate without moving. Including wrap around logic.
 
 ## Roadmap
 
-[Planned] Forward movement based on the current heading.
+[Planned] Forward movement based on the current heading.<br>
 [Planned] Boundary detection: Logic to prevent the rover from moving off the grid.
