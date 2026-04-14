@@ -40,7 +40,7 @@ namespace MarsRover.Console.Rovers
          * This also means later on we don't need to check the instruction but it doesn't hurt to keep it for now.
         */
 
-        public Position Move(Instruction instructions) 
+        public Position Move(Instruction instructions) // TODO: Return to this and finish tests after fixing collision logic
         {
             if (CurrentPosition.Facing == CompassDirection.W)
             {
