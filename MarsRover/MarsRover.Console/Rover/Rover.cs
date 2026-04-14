@@ -42,6 +42,8 @@ namespace MarsRover.Console.Rovers
 
         public Position Move(Instruction instruction) // TODO: Return to this and finish tests after fixing collision logic
         {
+            if (instruction == Instruction.L) return CurrentPosition;
+
             switch (CurrentPosition.Facing)
             {
                 case CompassDirection.N:
