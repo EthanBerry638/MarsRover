@@ -1,4 +1,5 @@
 ﻿using MarsRover.Console.Data;
+using MarsRover.Console.Rovers;
 
 namespace MarsRover.Console.Plateau
 {
@@ -6,7 +7,7 @@ namespace MarsRover.Console.Plateau
     {
         public PlateauSize Size { get; private set; } = size;
 
-        public bool IsColliding()
+        public bool IsBordering(Rover rover)
         {
             return false;
         }

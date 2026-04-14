@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarsRover.Console.Rover
+namespace MarsRover.Console.Rovers
 {
     public class Rover (Position startingPosition)
     {

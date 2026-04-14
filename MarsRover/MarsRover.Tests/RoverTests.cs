@@ -1,6 +1,6 @@
 ﻿using MarsRover.Console.Data;
 using MarsRover.Console.Directions;
-using MarsRover.Console.Rover;
+using MarsRover.Console.Rovers;
 
 using NUnit;
 
