@@ -34,6 +34,7 @@ namespace MarsRover.Console.Rovers
 
         public Position Move(List<Instruction> instructions)
         {
+            CurrentPosition.Y += 1;
             return CurrentPosition;
         }
     }
