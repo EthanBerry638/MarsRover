@@ -50,6 +50,9 @@ namespace MarsRover.Console.Rovers
                 case CompassDirection.E:
                     CurrentPosition.X += 1;
                     break;
+                case CompassDirection.S:
+                    CurrentPosition.Y -= 1;
+                    break;
                 case CompassDirection.W:
                     CurrentPosition.X -= 1;
                     break;
