@@ -172,6 +172,24 @@ namespace MarsRover.Tests
         }
 
         [Test]
+        public void PerformInstruction_ShouldReturnExpectedDirection_WhenGivenMultipleRotationInstructionOfBothTypesAndCollidesMultipleTimes()
+        {
+            List<Instruction> testInstructions = [Instruction.M, Instruction.R, Instruction.M, Instruction.R, Instruction.M, Instruction.L, Instruction.M, Instruction.L];
+
+            Position testPos = new(3, 3, CompassDirection.N);
+            Rover testRover = new(testPos);
+
+            PlateauSize testPlateauSize = new(3, 3);
+            Plateau testPlateau = new(testPlateauSize);
+
+            Position expected = new(3, 2, CompassDirection.N);
+
+            Position result = InstructionManager.PerformInstructions(testInstructions, testRover, testPlateau);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
         public void CorrectCollision_ShouldReturnNewRoverPosition_WhenCollidingWithYAxisOnLowerBound()
         {
             Position testPos = new(3, -1, CompassDirection.W);
