@@ -3,7 +3,7 @@ using MarsRover.Console.Data;
 using System.ComponentModel.DataAnnotations;
 using MarsRover.Console.Rovers;
 using MarsRover.Console.Directions;
-using MarsRover.Console.Plateau;
+using MarsRover.Console.Plateaus;
 
 namespace MarsRover.Tests
 {
