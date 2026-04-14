@@ -24,6 +24,10 @@ namespace MarsRover.Console.InstructionExecutor
                 if (plateau.IsBordering(rover.CurrentPosition))
                 {
                     Dictionary<string, int> borderingAxis = plateau.GetCollidingAxis(rover.CurrentPosition);
+
+                    Position newPos = CorrectCollision(borderingAxis, rover, plateau);
+
+                    rover.CurrentPosition = newPos;
                 };
             }
 

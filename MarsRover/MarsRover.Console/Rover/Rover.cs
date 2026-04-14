@@ -11,7 +11,7 @@ namespace MarsRover.Console.Rovers
 {
     public class Rover (Position startingPosition)
     {
-        public Position CurrentPosition { get; private set; } = startingPosition;
+        public Position CurrentPosition { get; set; } = startingPosition;
 
         public CompassDirection Rotate (Instruction instruction)
         {
