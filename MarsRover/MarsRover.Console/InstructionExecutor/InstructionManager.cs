@@ -5,12 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using MarsRover.Console.Data;
 using MarsRover.Console.Rovers;
-using MarsRover.Console.Plateau;
+using MarsRover.Console.Plateaus;
+using MarsRover.Console.Directions;
 
 namespace MarsRover.Console.InstructionExecutor
 {
     public static class InstructionManager
     {
+        public static Position PerformInstructions(List<Instruction> instructions, Rover rover, Plateau plateau)
+        {
+
+        }
     }
 }
 

@@ -2,7 +2,7 @@
 using MarsRover.Console.Rovers;
 using System.ComponentModel.Design;
 
-namespace MarsRover.Console.Plateau
+namespace MarsRover.Console.Plateaus
 {
     public class Plateau (PlateauSize size)
     {
