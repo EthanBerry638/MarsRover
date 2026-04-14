@@ -206,5 +206,24 @@ namespace MarsRover.Tests
 
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void CorrectCollision_ShouldReturnNewRoverPosition_WhenCollidingWithXAndYAxis()
+        {
+            Position testPos = new(-1, -1, CompassDirection.W);
+            Rover testRover = new(testPos);
+
+            Dictionary<string, int> testBorderingAxis = new Dictionary<string, int>
+            {
+                { "X", -1 },
+                { "Y", -1 }
+            };
+
+            Position expected = new(0, 0, CompassDirection.W);
+
+            Position result = InstructionManager.CorrectCollision(testBorderingAxis, testRover);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }
