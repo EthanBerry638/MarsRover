@@ -42,9 +42,7 @@ namespace MarsRover.Console.Rovers
 
         public Position Move(Instruction instruction) 
         {
-            if (instruction == Instruction.L) return CurrentPosition;
-
-            if (instruction == Instruction.R) return CurrentPosition;
+            if (instruction != Instruction.M) return CurrentPosition;
 
             switch (CurrentPosition.Facing)
             {
