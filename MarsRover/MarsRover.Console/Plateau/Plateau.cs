@@ -13,9 +13,9 @@ namespace MarsRover.Console.Plateau
             return false;
         }
 
-        public int[] GetCollidingAxis(Rover rover)
+        public Dictionary<string, int> GetCollidingAxis(Rover rover)
         {
-            return [];
+            return new Dictionary<string, int>();
         }
     }
 }
