@@ -26,9 +26,9 @@ namespace MarsRover.Console.Plateau
             {
                 { "X", position.X }
             };
-            else return new Dictionary<string, int> 
-            { 
-                { "Y", position.Y } 
+            else return new Dictionary<string, int>
+            {
+                { "Y", position.Y }
             };
         }
     }
