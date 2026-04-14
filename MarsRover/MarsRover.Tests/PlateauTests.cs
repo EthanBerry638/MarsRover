@@ -174,5 +174,24 @@ namespace MarsRover.Tests
 
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void GetCollidingAxis_ShouldReturnXAndYAxis_WhenXAndYPositionIsNegative()
+        {
+            Position testPosition = new(-1, -1, CompassDirection.N);
+
+            PlateauSize testPlateauSize = new(5, 5);
+            Plateau testPlateau = new(testPlateauSize);
+
+            Dictionary<string, int> expected = new Dictionary<string, int>
+            {
+                { "X", -1 },
+                { "Y", -1 }
+            };
+
+            Dictionary<string, int> result = testPlateau.GetCollidingAxis(testPosition);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }
