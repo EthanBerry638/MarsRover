@@ -31,5 +31,10 @@ namespace MarsRover.Console.Rovers
             CurrentPosition.Facing = (CompassDirection)(newDir);
             return CurrentPosition.Facing; 
         }
+
+        public Position Move(Instruction instruction)
+        {
+            return CurrentPosition;
+        }
     }
 }
