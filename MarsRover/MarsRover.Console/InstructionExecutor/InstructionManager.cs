@@ -34,15 +34,15 @@ namespace MarsRover.Console.InstructionExecutor
         {
             foreach (var keyValue in borderingAxis)
             {
-                if (borderingAxis.ContainsKey("Y"))
+                if (keyValue.Key == "X")
+                {
+                    rover.CurrentPosition.X = 0;
+                }
+
+                if (keyValue.Key == "Y")
                 {
                     rover.CurrentPosition.Y = 0;
 
-                }
-                      
-                if (borderingAxis.ContainsKey("X"))
-                {
-                    rover.CurrentPosition.X = 0;
                 }
             }
 
