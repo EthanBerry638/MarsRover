@@ -12,5 +12,10 @@ namespace MarsRover.Console.Plateau
             if (rover.CurrentPosition.X > Size.X || rover.CurrentPosition.Y > Size.Y) return true;
             return false;
         }
+
+        public int GetCollidingAxis(Rover rover)
+        {
+            return 0;
+        }
     }
 }
