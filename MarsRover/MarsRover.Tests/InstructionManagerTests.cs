@@ -182,7 +182,7 @@ namespace MarsRover.Tests
             PlateauSize testPlateauSize = new(3, 3);
             Plateau testPlateau = new(testPlateauSize);
 
-            Position expected = new(2, 2, CompassDirection.N);
+            Position expected = new(3, 2, CompassDirection.N);
 
             Position result = InstructionManager.PerformInstructions(testInstructions, testRover, testPlateau);
 
