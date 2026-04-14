@@ -10,13 +10,13 @@ namespace MarsRover.Console.Rover
 {
     public class Rover (Position startingPosition)
     {
-        public Position _startingPosition { get; private set; } = startingPosition;
+        public Position CurrentPosition { get; private set; } = startingPosition;
 
         public CompassDirection Rotate (Instruction instruction)
         {
-            if (instruction == Instruction.M) return _startingPosition.Facing;
+            if (instruction == Instruction.M) return CurrentPosition.Facing;
 
-            int currentDir = (int)_startingPosition.Facing - 1;
+            int currentDir = (int)CurrentPosition.Facing - 1;
             int newDir;
 
             if (instruction == Instruction.L)
@@ -28,8 +28,8 @@ namespace MarsRover.Console.Rover
                 newDir = (currentDir + 1) % 4;
             }
 
-            _startingPosition.Facing = (CompassDirection)(newDir + 1);
-            return _startingPosition.Facing; 
+            CurrentPosition.Facing = (CompassDirection)(newDir + 1);
+            return CurrentPosition.Facing; 
         }
     }
 }
