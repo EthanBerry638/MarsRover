@@ -116,5 +116,23 @@ namespace MarsRover.Tests
 
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void PerformInstruction_ShouldReturnExpectedXAxis_WhenGivenMultipleMoveInstructionAndFacingEast()
+        {
+            List<Instruction> testInstructions = [Instruction.M, Instruction.M, Instruction.M];
+
+            Position testPos = new(2, 3, CompassDirection.E);
+            Rover testRover = new(testPos);
+
+            PlateauSize testPlateauSize = new(5, 5);
+            Plateau testPlateau = new(testPlateauSize);
+
+            Position expected = new(5, 3, CompassDirection.E);
+
+            Position result = InstructionManager.PerformInstructions(testInstructions, testRover, testPlateau);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }
