@@ -20,6 +20,11 @@ namespace MarsRover.Console.InstructionExecutor
             {
                 if (instruction == Instruction.M) rover.Move(instruction);
                 else rover.Rotate(instruction);
+
+                if (plateau.IsBordering(rover.CurrentPosition))
+                {
+                    Dictionary<string, int> borderingAxis = plateau.GetCollidingAxis(rover.CurrentPosition);
+                };
             }
 
             return rover.CurrentPosition;
