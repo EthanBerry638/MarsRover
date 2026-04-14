@@ -1,5 +1,6 @@
 ﻿using MarsRover.Console.Data;
 using MarsRover.Console.Rovers;
+using System.ComponentModel.Design;
 
 namespace MarsRover.Console.Plateau
 {
@@ -15,8 +16,20 @@ namespace MarsRover.Console.Plateau
 
         public Dictionary<string, int> GetCollidingAxis(Position position) // position will be given by the rover. this will be called in the move method
         {
-            if (position.X > Size.X) return new Dictionary<string, int> { { "X", 10 } };
-            return new Dictionary<string, int>() { { "Y", 20 } };
+            if (position.X > Size.X && position.Y > Size.Y) return new Dictionary<string, int>
+            {
+                { "X", position.X },
+                { "Y", position.Y }
+            };
+
+            if (position.X > Size.X) return new Dictionary<string, int>
+            {
+                { "X", position.X }
+            };
+            else return new Dictionary<string, int> 
+            { 
+                { "Y", position.Y } 
+            };
         }
     }
 }
