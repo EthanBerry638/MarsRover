@@ -13,14 +13,13 @@ namespace MarsRover.Tests
         public void IsBordering_ShouldReturnTrue_WhenXPositionOfRoverIsExceedingPlateauSize()
         {
             Position testPosition = new(6, 3, CompassDirection.N);
-            Rover testRover = new(testPosition);
 
             PlateauSize testPlateauSize = new(5, 5);
             Plateau testPlateau = new(testPlateauSize);
 
             bool expected = true;
 
-            bool result = testPlateau.IsBordering(testRover);
+            bool result = testPlateau.IsBordering(testPosition);
 
             Assert.That(result, Is.EqualTo(expected));
         }
@@ -29,14 +28,13 @@ namespace MarsRover.Tests
         public void IsBordering_ShouldReturnFalse_WhenBothPositionOfRoverIsNotExceedingPlateauSize()
         {
             Position testPosition = new(3, 3, CompassDirection.N);
-            Rover testRover = new(testPosition);
 
             PlateauSize testPlateauSize = new(5, 5);
             Plateau testPlateau = new(testPlateauSize);
 
             bool expected = false;
 
-            bool result = testPlateau.IsBordering(testRover);
+            bool result = testPlateau.IsBordering(testPosition);
 
             Assert.That(result, Is.EqualTo(expected));
         }
@@ -45,14 +43,13 @@ namespace MarsRover.Tests
         public void IsBordering_ShouldReturnTrue_WhenYPositionOfRoverIsExceedingPlateauSize()
         {
             Position testPosition = new(3, 6, CompassDirection.N);
-            Rover testRover = new(testPosition);
 
             PlateauSize testPlateauSize = new(5, 5);
             Plateau testPlateau = new(testPlateauSize);
 
             bool expected = true;
 
-            bool result = testPlateau.IsBordering(testRover);
+            bool result = testPlateau.IsBordering(testPosition);
 
             Assert.That(result, Is.EqualTo(expected));
         }
@@ -61,14 +58,13 @@ namespace MarsRover.Tests
         public void IsBordering_ShouldReturnTrue_WhenYPositionOfRoverIsLessThan0()
         {
             Position testPosition = new(3, -1, CompassDirection.N);
-            Rover testRover = new(testPosition);
 
             PlateauSize testPlateauSize = new(5, 5);
             Plateau testPlateau = new(testPlateauSize);
 
             bool expected = true;
 
-            bool result = testPlateau.IsBordering(testRover);
+            bool result = testPlateau.IsBordering(testPosition);
 
             Assert.That(result, Is.EqualTo(expected));
         }
@@ -77,14 +73,13 @@ namespace MarsRover.Tests
         public void IsBordering_ShouldReturnTrue_WhenXPositionOfRoverIsLessThan0()
         {
             Position testPosition = new(-1, 3, CompassDirection.N);
-            Rover testRover = new(testPosition);
 
             PlateauSize testPlateauSize = new(5, 5);
             Plateau testPlateau = new(testPlateauSize);
 
             bool expected = true;
 
-            bool result = testPlateau.IsBordering(testRover);
+            bool result = testPlateau.IsBordering(testPosition);
 
             Assert.That(result, Is.EqualTo(expected));
         }
