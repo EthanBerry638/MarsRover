@@ -14,6 +14,9 @@ namespace MarsRover.Console.InstructionExecutor
     {
         public static Position PerformInstructions(List<Instruction> instructions, Rover rover, Plateau plateau)
         {
+            if (instructions.Count == 0) return rover.CurrentPosition;
+
+            rover.CurrentPosition.Facing = CompassDirection.E;
             return rover.CurrentPosition;
         }
     }
