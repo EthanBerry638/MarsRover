@@ -32,7 +32,7 @@ namespace MarsRover.Console.Rovers
             return CurrentPosition.Facing; 
         }
 
-        public Position Move(Instruction instruction)
+        public Position Move(List<Instruction> instructions)
         {
             return CurrentPosition;
         }
