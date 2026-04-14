@@ -10,9 +10,9 @@ namespace MarsRover.Tests
     public class PlateauTests
     {
         [Test]
-        public void IsBordering_ShouldReturnTrue_WhenPositionOfRoverIsExceedingPlateauSize()
+        public void IsBordering_ShouldReturnTrue_WhenXPositionOfRoverIsExceedingPlateauSize()
         {
-            Position testPosition = new(6, 6, CompassDirection.N);
+            Position testPosition = new(6, 3, CompassDirection.N);
             Rover testRover = new(testPosition);
 
             PlateauSize testPlateauSize = new(5, 5);
@@ -26,7 +26,7 @@ namespace MarsRover.Tests
         }
 
         [Test]
-        public void IsBordering_ShouldReturnFalse_WhenPositionOfRoverIsNotExceedingPlateauSize()
+        public void IsBordering_ShouldReturnFalse_WhenBothPositionOfRoverIsNotExceedingPlateauSize()
         {
             Position testPosition = new(3, 3, CompassDirection.N);
             Rover testRover = new(testPosition);
