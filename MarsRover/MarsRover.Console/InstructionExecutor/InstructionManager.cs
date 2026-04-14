@@ -16,7 +16,8 @@ namespace MarsRover.Console.InstructionExecutor
         {
             if (instructions.Count == 0) return rover.CurrentPosition;
 
-            rover.CurrentPosition.Facing = CompassDirection.E;
+            rover.Rotate(instructions[0]);
+
             return rover.CurrentPosition;
         }
     }
