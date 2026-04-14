@@ -9,7 +9,7 @@ namespace MarsRover.Console.Plateau
 
         public bool IsBordering(Rover rover)
         {
-            return false;
+            return true;
         }
     }
 }
