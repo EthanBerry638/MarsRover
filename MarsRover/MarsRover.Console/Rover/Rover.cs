@@ -3,6 +3,7 @@ using MarsRover.Console.Directions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,6 +42,11 @@ namespace MarsRover.Console.Rovers
 
         public Position Move(Instruction instructions) 
         {
+            if (CurrentPosition.Facing == CompassDirection.W)
+            {
+                CurrentPosition.X -= 1;
+                return CurrentPosition;
+            }
             CurrentPosition.Y += 1;
             return CurrentPosition;
         }
