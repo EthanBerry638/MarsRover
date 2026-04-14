@@ -58,6 +58,22 @@ namespace MarsRover.Tests
         }
 
         [Test]
+        public void IsBordering_ShouldReturnTrue_WhenYPositionOfRoverIsLessThan0()
+        {
+            Position testPosition = new(3, -1, CompassDirection.N);
+            Rover testRover = new(testPosition);
+
+            PlateauSize testPlateauSize = new(5, 5);
+            Plateau testPlateau = new(testPlateauSize);
+
+            bool expected = true;
+
+            bool result = testPlateau.IsBordering(testRover);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
         public void GetCollidingAxis_ShouldReturnXAxisOnly_WhenOnlyXPositionIsOutOfBounds()
         {
             Position testPosition = new(10, 3, CompassDirection.N);
