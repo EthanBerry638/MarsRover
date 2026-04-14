@@ -172,7 +172,7 @@ namespace MarsRover.Tests
         }
 
         [Test]
-        public void CorrectCollision_ShouldReturnNewRoverPosition_WhenCollidingWithYAxis()
+        public void CorrectCollision_ShouldReturnNewRoverPosition_WhenCollidingWithYAxisOnLowerBound()
         {
             Position testPos = new(3, -1, CompassDirection.W);
             Rover testRover = new(testPos);
@@ -193,7 +193,7 @@ namespace MarsRover.Tests
         }
 
         [Test]
-        public void CorrectCollision_ShouldReturnNewRoverPosition_WhenCollidingWithXAxis()
+        public void CorrectCollision_ShouldReturnNewRoverPosition_WhenCollidingWithXAxisOnLowerBound()
         {
             Position testPos = new(-1, 3, CompassDirection.W);
             Rover testRover = new(testPos);
@@ -214,7 +214,7 @@ namespace MarsRover.Tests
         }
 
         [Test]
-        public void CorrectCollision_ShouldReturnNewRoverPosition_WhenCollidingWithXAndYAxis()
+        public void CorrectCollision_ShouldReturnNewRoverPosition_WhenCollidingWithXAndYAxisOnLowerBound()
         {
             Position testPos = new(-1, -1, CompassDirection.W);
             Rover testRover = new(testPos);
