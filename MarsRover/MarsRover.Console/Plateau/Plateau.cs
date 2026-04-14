@@ -31,10 +31,12 @@ namespace MarsRover.Console.Plateau
             {
                 { "X", position.X }
             };
-            else return new Dictionary<string, int>
+            else if (position.Y > Size.Y) return new Dictionary<string, int>
             {
                 { "Y", position.Y }
             };
+
+            return new Dictionary<string, int>(); //placeholder
         }
     }
 }
