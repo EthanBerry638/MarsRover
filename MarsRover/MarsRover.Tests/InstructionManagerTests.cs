@@ -236,6 +236,27 @@ namespace MarsRover.Tests
         }
 
         [Test]
+        public void CorrectCollision_ShouldReturnExpectedRoverPosition_WhenCollidingWithXAxisOnUpperBound()
+        {
+            Position testPos = new(6, 3, CompassDirection.W);
+            Rover testRover = new(testPos);
+
+            PlateauSize testPlateauSize = new(5, 5);
+            Plateau testPlateau = new(testPlateauSize);
+
+            Dictionary<string, int> testBorderingAxis = new Dictionary<string, int>
+            {
+                { "X", 6 }
+            };
+
+            Position expected = new(5, 3, CompassDirection.W);
+
+            Position result = InstructionManager.CorrectCollision(testBorderingAxis, testRover, testPlateau);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
         public void CorrectCollision_ShouldReturnSameRoverPosition_WhenGivenEmptyDictionary()
         {
             Position testPos = new(0, 0, CompassDirection.W);
