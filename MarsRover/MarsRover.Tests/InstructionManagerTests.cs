@@ -62,5 +62,23 @@ namespace MarsRover.Tests
 
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void PerformInstruction_ShouldReturnUpdatedXAxis_WhenGivenAMoveInstructionAndFacingWest()
+        {
+            List<Instruction> testInstructions = [Instruction.M];
+
+            Position testPos = new(3, 3, CompassDirection.W);
+            Rover testRover = new(testPos);
+
+            PlateauSize testPlateauSize = new(5, 5);
+            Plateau testPlateau = new(testPlateauSize);
+
+            Position expected = new(2, 3, CompassDirection.W);
+
+            Position result = InstructionManager.PerformInstructions(testInstructions, testRover, testPlateau);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }
