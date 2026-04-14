@@ -37,7 +37,7 @@ namespace MarsRover.Console.InstructionExecutor
                 rover.CurrentPosition.Y = 0;
                 return rover.CurrentPosition;
             }
-
+           
             return new Position(20, 20, CompassDirection.W);
         }
     }
