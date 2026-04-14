@@ -38,7 +38,8 @@ namespace MarsRover.Console.InstructionExecutor
             {
                 if (keyValue.Key == "X")
                 {
-                    rover.CurrentPosition.X = 0;
+                    if (keyValue.Value > 0) rover.CurrentPosition.X = plateau.Size.X;
+                    else rover.CurrentPosition.X = 0;
                 }
 
                 if (keyValue.Key == "Y")
