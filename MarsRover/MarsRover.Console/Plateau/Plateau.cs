@@ -14,7 +14,7 @@ namespace MarsRover.Console.Plateau
             return false;
         }
 
-        public Dictionary<string, int> GetCollidingAxis(Position position) // position will be given by the rover. this will be called in the orchestrator class
+        public Dictionary<string, int> GetCollidingAxis(Position position) // TODO: refactor into switch statement
         {
             if (position.X > Size.X && position.Y > Size.Y) return new Dictionary<string, int>
             {
@@ -45,7 +45,7 @@ namespace MarsRover.Console.Plateau
                 { "Y", position.Y }
             };
 
-            return new Dictionary<string, int>(); //placeholder
+            return new Dictionary<string, int>(); 
         }
     }
 }
