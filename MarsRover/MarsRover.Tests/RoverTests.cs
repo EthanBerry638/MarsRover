@@ -65,7 +65,7 @@ public class RoverTests
     {
         Position position = new Position(0, 0, CompassDirection.N);
         var rover = new Rover(position);
-        List<Instruction> testInstructions = [Instruction.M];
+        Instruction testInstructions = Instruction.M;
         var expected = new Position(0, 1, CompassDirection.N);
 
         Position result = rover.Move(testInstructions);
@@ -78,10 +78,10 @@ public class RoverTests
     {
         Position position = new Position(1, 0, CompassDirection.W);
         var rover = new Rover(position);
-        List<Instruction> testInstructions = [Instruction.M];
+        Instruction testInstruction = Instruction.M;
         var expected = new Position(0, 0, CompassDirection.W);
 
-        Position result = rover.Move(testInstructions);
+        Position result = rover.Move(testInstruction);
 
         Assert.That(result, Is.EqualTo(expected));
     }
