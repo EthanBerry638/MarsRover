@@ -32,18 +32,21 @@ namespace MarsRover.Console.InstructionExecutor
 
         public static Position CorrectCollision(Dictionary<string, int> borderingAxis, Rover rover)
         {
-            if (borderingAxis.ContainsKey("Y"))
+            foreach (var keyValue in borderingAxis)
             {
-                rover.CurrentPosition.Y = 0;
-                return rover.CurrentPosition;
-            }
-            else if (borderingAxis.ContainsKey("X"))
-            {
-                rover.CurrentPosition.X = 0;
-                return rover.CurrentPosition;
+                if (borderingAxis.ContainsKey("Y"))
+                {
+                    rover.CurrentPosition.Y = 0;
+
+                }
+                      
+                if (borderingAxis.ContainsKey("X"))
+                {
+                    rover.CurrentPosition.X = 0;
+                }
             }
 
-            return new Position(20, 20, CompassDirection.W);
+            return rover.CurrentPosition;
         }
     }
 }
