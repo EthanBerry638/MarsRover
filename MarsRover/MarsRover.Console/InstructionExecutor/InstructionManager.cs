@@ -19,9 +19,8 @@ namespace MarsRover.Console.InstructionExecutor
             foreach (Instruction instruction in instructions)
             {
                 if (instruction == Instruction.M) rover.Move(instruction);
+                else rover.Rotate(instruction);
             }
-
-            rover.Rotate(instructions[0]);
 
             return rover.CurrentPosition;
         }
