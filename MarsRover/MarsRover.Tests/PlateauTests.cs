@@ -24,5 +24,21 @@ namespace MarsRover.Tests
 
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void IsBordering_ShouldReturnFalse_WhenPositionOfRoverIsNotExceedingPlateauSize()
+        {
+            Position testPosition = new(3, 3, CompassDirection.N);
+            Rover testRover = new(testPosition);
+
+            PlateauSize testPlateauSize = new(5, 5);
+            Plateau testPlateau = new(testPlateauSize);
+
+            bool expected = false;
+
+            bool result = testPlateau.IsBordering(testRover);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }
