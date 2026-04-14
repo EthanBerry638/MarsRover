@@ -31,10 +31,3 @@ namespace MarsRover.Console.InstructionExecutor
         }
     }
 }
-
-/* TODO: Multiple moves will be handled in a different method called PerformInstructions. 
-         * This will take the List of instructions and orchestrate the move, rotation and collision logic.
-         * Both Move and Rotate only need to know about one instruction and do it.
-         * The new method will tell each method what to do.
-         * This also means later on we don't need to check the instruction but it doesn't hurt to keep it for now.
-        */
