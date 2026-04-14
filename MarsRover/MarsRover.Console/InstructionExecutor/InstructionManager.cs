@@ -14,7 +14,7 @@ namespace MarsRover.Console.InstructionExecutor
     {
         public static Position PerformInstructions(List<Instruction> instructions, Rover rover, Plateau plateau)
         {
-            return new Position(0, 0, CompassDirection.N);
+            return rover.CurrentPosition;
         }
     }
 }
