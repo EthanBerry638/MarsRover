@@ -2,7 +2,7 @@
 {
     public enum CompassDirection
     {
-        N = 1,
+        N,
         E,
         S,
         W

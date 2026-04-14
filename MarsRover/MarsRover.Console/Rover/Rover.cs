@@ -16,7 +16,7 @@ namespace MarsRover.Console.Rover
         {
             if (instruction == Instruction.M) return CurrentPosition.Facing;
 
-            int currentDir = (int)CurrentPosition.Facing - 1;
+            int currentDir = (int)CurrentPosition.Facing;
             int newDir;
 
             if (instruction == Instruction.L)
@@ -28,7 +28,7 @@ namespace MarsRover.Console.Rover
                 newDir = (currentDir + 1) % 4;
             }
 
-            CurrentPosition.Facing = (CompassDirection)(newDir + 1);
+            CurrentPosition.Facing = (CompassDirection)(newDir);
             return CurrentPosition.Facing; 
         }
     }
