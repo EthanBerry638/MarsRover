@@ -37,7 +37,12 @@ namespace MarsRover.Console.InstructionExecutor
                 rover.CurrentPosition.Y = 0;
                 return rover.CurrentPosition;
             }
-           
+            else if (borderingAxis.ContainsKey("X"))
+            {
+                rover.CurrentPosition.X = 0;
+                return rover.CurrentPosition;
+            }
+
             return new Position(20, 20, CompassDirection.W);
         }
     }
