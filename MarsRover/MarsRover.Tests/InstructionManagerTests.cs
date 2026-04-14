@@ -225,5 +225,20 @@ namespace MarsRover.Tests
 
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void CorrectCollision_ShouldReturnSameRoverPosition_WhenGivenEmptyDictionary()
+        {
+            Position testPos = new(0, 0, CompassDirection.W);
+            Rover testRover = new(testPos);
+
+            Dictionary<string, int> testBorderingAxis = new Dictionary<string, int>{};
+
+            Position expected = new(0, 0, CompassDirection.W);
+
+            Position result = InstructionManager.CorrectCollision(testBorderingAxis, testRover);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }
