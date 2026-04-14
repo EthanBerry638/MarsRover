@@ -177,6 +177,9 @@ namespace MarsRover.Tests
             Position testPos = new(3, -1, CompassDirection.W);
             Rover testRover = new(testPos);
 
+            PlateauSize testPlateauSize = new(5, 5);
+            Plateau testPlateau = new(testPlateauSize);
+
             Dictionary<string, int> testBorderingAxis = new Dictionary<string, int>
             {
                 { "Y", -1 }
@@ -184,7 +187,7 @@ namespace MarsRover.Tests
 
             Position expected = new(3, 0, CompassDirection.W);
 
-            Position result = InstructionManager.CorrectCollision(testBorderingAxis, testRover);
+            Position result = InstructionManager.CorrectCollision(testBorderingAxis, testRover, testPlateau);
 
             Assert.That(result, Is.EqualTo(expected));
         }
@@ -195,6 +198,9 @@ namespace MarsRover.Tests
             Position testPos = new(-1, 3, CompassDirection.W);
             Rover testRover = new(testPos);
 
+            PlateauSize testPlateauSize = new(5, 5);
+            Plateau testPlateau = new(testPlateauSize);
+
             Dictionary<string, int> testBorderingAxis = new Dictionary<string, int>
             {
                 { "X", -1 }
@@ -202,7 +208,7 @@ namespace MarsRover.Tests
 
             Position expected = new(0, 3, CompassDirection.W);
 
-            Position result = InstructionManager.CorrectCollision(testBorderingAxis, testRover);
+            Position result = InstructionManager.CorrectCollision(testBorderingAxis, testRover, testPlateau);
 
             Assert.That(result, Is.EqualTo(expected));
         }
@@ -213,6 +219,9 @@ namespace MarsRover.Tests
             Position testPos = new(-1, -1, CompassDirection.W);
             Rover testRover = new(testPos);
 
+            PlateauSize testPlateauSize = new(5, 5);
+            Plateau testPlateau = new(testPlateauSize);
+
             Dictionary<string, int> testBorderingAxis = new Dictionary<string, int>
             {
                 { "X", -1 },
@@ -221,7 +230,7 @@ namespace MarsRover.Tests
 
             Position expected = new(0, 0, CompassDirection.W);
 
-            Position result = InstructionManager.CorrectCollision(testBorderingAxis, testRover);
+            Position result = InstructionManager.CorrectCollision(testBorderingAxis, testRover, testPlateau);
 
             Assert.That(result, Is.EqualTo(expected));
         }
@@ -232,11 +241,14 @@ namespace MarsRover.Tests
             Position testPos = new(0, 0, CompassDirection.W);
             Rover testRover = new(testPos);
 
+            PlateauSize testPlateauSize = new(5, 5);
+            Plateau testPlateau = new(testPlateauSize);
+
             Dictionary<string, int> testBorderingAxis = new Dictionary<string, int>{};
 
             Position expected = new(0, 0, CompassDirection.W);
 
-            Position result = InstructionManager.CorrectCollision(testBorderingAxis, testRover);
+            Position result = InstructionManager.CorrectCollision(testBorderingAxis, testRover, testPlateau);
 
             Assert.That(result, Is.EqualTo(expected));
         }
