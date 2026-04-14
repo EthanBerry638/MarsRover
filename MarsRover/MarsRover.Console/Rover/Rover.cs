@@ -47,11 +47,11 @@ namespace MarsRover.Console.Rovers
                 case CompassDirection.N:
                     CurrentPosition.Y += 1;
                     break;
-                case CompassDirection.W:
-                    CurrentPosition.X -= 1;
-                    break;
                 case CompassDirection.E:
                     CurrentPosition.X += 1;
+                    break;
+                case CompassDirection.W:
+                    CurrentPosition.X -= 1;
                     break;
             }
 
