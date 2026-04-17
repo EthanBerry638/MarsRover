@@ -10,8 +10,7 @@ namespace MarsRover.Console.Plateaus
 
         public bool IsBordering(Position position)
         {
-            if (position.X > Size.X || position.Y > Size.Y || position.Y < 0 || position.X < 0) return true;
-            return false;
+            return position.X > Size.X || position.Y > Size.Y || position.Y < 0 || position.X < 0;
         }
 
         public Dictionary<string, int> GetCollidingAxis(Position position) // TODO: refactor into switch statement
