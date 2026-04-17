@@ -1,4 +1,4 @@
-﻿namespace MarsRover.Console.Directions
+﻿namespace MarsRover.Console.Data
 {
     public enum Instruction
     {

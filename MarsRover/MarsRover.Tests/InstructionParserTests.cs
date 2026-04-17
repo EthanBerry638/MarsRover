@@ -1,4 +1,4 @@
-﻿using MarsRover.Console.Directions;
+﻿using MarsRover.Console.Data;
 using MarsRover.Console.Parsers;
 using NUnit.Framework;
 
