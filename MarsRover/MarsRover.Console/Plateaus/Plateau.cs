@@ -13,38 +13,15 @@ namespace MarsRover.Console.Plateaus
             return position.X > Size.X || position.Y > Size.Y || position.Y < 0 || position.X < 0;
         }
 
-        public Dictionary<string, int> GetCollidingAxis(Position position) // TODO: refactor into switch statement
+        public Dictionary<string, int> GetCollidingAxis(Position position)
         {
-            if (position.X > Size.X && position.Y > Size.Y) return new Dictionary<string, int>
-            {
-                { "X", position.X },
-                { "Y", position.Y }
-            };
-            else if (position.X < 0 && position.Y < 0) return new Dictionary<string, int>
-            {
-                { "X", position.X },
-                { "Y", position.Y }
-            };
+            Dictionary<string, int> collisions = [];
 
-            if (position.X < 0) return new Dictionary<string, int>
-            {
-                { "X", position.X }
-            };
-            else if (position.Y < 0) return new Dictionary<string, int>
-            {
-                { "Y", position.Y }
-            };
+            if (position.X < 0 || position.X > Size.X) collisions.Add("X", position.X);
 
-            if (position.X > Size.X) return new Dictionary<string, int>
-            {
-                { "X", position.X }
-            };
-            else if (position.Y > Size.Y) return new Dictionary<string, int>
-            {
-                { "Y", position.Y }
-            };
+            if (position.Y < 0 || position.Y > Size.Y) collisions.Add("Y", position.Y);
 
-            return new Dictionary<string, int>(); 
+            return collisions;
         }
     }
 }
