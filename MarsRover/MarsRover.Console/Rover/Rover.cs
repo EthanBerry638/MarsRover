@@ -4,10 +4,10 @@ using MarsRover.Console.Plateaus;
 
 namespace MarsRover.Console.Rovers
 {
-    public class Rover(Position startingPosition, string name)
+    public class Rover(Position startingPosition, string name = "")
     {
         public Position CurrentPosition { get; private set; } = startingPosition;
-        public string Name { get; private set; } = "";
+        public string Name { get; private set; } = name;
 
         public CompassDirection Rotate(Instruction instruction)
         {
