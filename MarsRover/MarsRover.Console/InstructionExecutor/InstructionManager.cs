@@ -21,37 +21,7 @@ namespace MarsRover.Console.InstructionExecutor
                 if (instruction == Instruction.M) rover.Move(instruction);
                 else rover.Rotate(instruction);
 
-                if (plateau.IsBordering(rover.CurrentPosition))
-                {
-                    Dictionary<string, int> borderingAxis = plateau.GetCollidingAxis(rover.CurrentPosition);
-
-                    Position newPos = CorrectCollision(borderingAxis, rover, plateau);
-
-                    rover.CurrentPosition = newPos;
-                };
-            }
-
-            return rover.CurrentPosition;
-        }
-
-        public static Position CorrectCollision(Dictionary<string, int> borderingAxis, Rover rover, Plateau plateau)
-        {
-            if (borderingAxis.Count == 0) return rover.CurrentPosition;
-
-            foreach (var keyValue in borderingAxis)
-            {
-                if (keyValue.Key == "X")
-                {
-                    if (keyValue.Value > 0) rover.CurrentPosition.X = plateau.Size.X;
-                    else rover.CurrentPosition.X = 0;
-                }
-
-                if (keyValue.Key == "Y")
-                {
-                    if (keyValue.Value > 0) rover.CurrentPosition.Y = plateau.Size.Y;
-                    else rover.CurrentPosition.Y = 0;
-
-                }
+                rover.CollisionCheck(plateau);
             }
 
             return rover.CurrentPosition;
