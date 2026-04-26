@@ -28,6 +28,8 @@ namespace MarsRover.Console.Parsers
 
         public static Position GetPosition(string parsedPosition, PlateauSize plateau)
         {
+            if (parsedPosition == "") throw new InvalidPositionException("\nInvalid format. Please enter two positive integers within the plateau bounds and a direction separated by spaces.\n");
+
             string[] parts = parsedPosition.Split(' ');
 
             if (plateau.X < int.Parse(parts[0]) || plateau.Y < int.Parse(parts[1]))
