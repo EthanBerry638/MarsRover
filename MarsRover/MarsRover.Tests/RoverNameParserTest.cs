@@ -27,7 +27,7 @@ namespace MarsRover.Tests
         }
 
         [Test]
-        public void RoverName_ShouldFormatNameIntoACleanString_WhenGivenNameWithLeadingAndTrailingWhitespace()
+        public void RoverNameParser_ShouldFormatNameIntoACleanString_WhenGivenNameWithLeadingAndTrailingWhitespace()
         {
             string input = "    Ethan      ";
             string expected = "Ethan";
@@ -38,7 +38,7 @@ namespace MarsRover.Tests
         }
 
         [Test]
-        public void RoverName_ShouldCapitaliseFirstLetterOfString_WhenGivenNameWithLowerCaseFirstChar()
+        public void RoverNameParser_ShouldCapitaliseFirstLetterOfString_WhenGivenNameWithLowerCaseFirstChar()
         {
             string input = "ethan";
             string expected = "Ethan";
@@ -51,7 +51,7 @@ namespace MarsRover.Tests
         [Test]
         [TestCase("%%3##';#3")]
         [TestCase("0595850450")]
-        public void RoverName_ShouldReturnNull_WhenOnlyGivenPunctuationOrNumbers(string input)
+        public void RoverNameParser_ShouldReturnNull_WhenOnlyGivenPunctuationOrNumbers(string input)
         {
             string? expected = null;
 
@@ -61,7 +61,7 @@ namespace MarsRover.Tests
         }
 
         [Test]
-        public void RoverName_ShouldCleanUpperCaseLettersInMiddleOfStringToLowerCase_WhenGivenStringWithSomeLowerCaseLetters()
+        public void RoverNameParser_ShouldCleanUpperCaseLettersInMiddleOfStringToLowerCase_WhenGivenStringWithSomeLowerCaseLetters()
         {
             string input = "EtHAn";
             string expected = "Ethan";
