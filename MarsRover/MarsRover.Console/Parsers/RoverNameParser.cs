@@ -4,7 +4,8 @@
     {
         public static string? GetRawName(string rawInput)
         {
-            return null;
+            if (string.IsNullOrWhiteSpace(rawInput)) return null;
+            return rawInput;
         }
     }
 }
