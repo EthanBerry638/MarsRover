@@ -2,5 +2,13 @@
 {
     public class UI
     {
+        public void StartMission()
+        {
+            while (true)
+            {
+                //TODO: DisplayWelcome();
+                break;
+            }
+        }
     }
 }
