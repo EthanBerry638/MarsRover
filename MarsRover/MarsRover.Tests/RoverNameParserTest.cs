@@ -14,5 +14,15 @@ namespace MarsRover.Tests
 
             Assert.That(result, Is.EqualTo(null));
         }
+
+        [Test]
+        public void RoverNameParser_ShouldReturnName_WhenGivenAValidString()
+        {
+            string input = "Ethan";
+
+            string? result = RoverNameParser.GetRawName(input);
+
+            Assert.That(result, Is.EqualTo(input));
+        }
     }
 }
