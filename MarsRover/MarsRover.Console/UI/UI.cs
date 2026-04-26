@@ -25,11 +25,11 @@ namespace MarsRover.Console.UI
             }
         }
 
-        private PlateauSize GetStartingPlateau()
+        private PlateauSize? GetStartingPlateau()
         {
             Write("Enter Plateau Size (e.g., 5 5): ");
-            string input = ReadLine()!;
-            int[] rawData = PlateauParser.ParseRawPlateau(input);
+            string? input = ReadLine();
+            int[] rawData = PlateauParser.ParseRawPlateau(input!);
 
             try
             {
@@ -38,15 +38,15 @@ namespace MarsRover.Console.UI
             catch (ArgumentException)
             {
                 WriteLine("Invalid format. Please enter two positive integers separated by a space.");
-                return null!;
+                return null;
             }
         }
 
-        private Position GetInitialPosition(Plateau plateau)
+        private Position? GetInitialPosition(Plateau plateau)
         {
             Write("Enter Initial Rover Position (e.g., 2 4 W): ");
-            string input = ReadLine()!;
-            string parsedPos = PositionParser.RawPositionParser(input);
+            string? input = ReadLine();
+            string parsedPos = PositionParser.RawPositionParser(input!);
 
             try
             {
@@ -55,7 +55,7 @@ namespace MarsRover.Console.UI
             catch (ArgumentException)
             {
                 WriteLine("Invalid format. Please enter two positive integers within the plateau bounds and a direction separated by a space.");
-                return null!;
+                return null;
             }
         }
     }
