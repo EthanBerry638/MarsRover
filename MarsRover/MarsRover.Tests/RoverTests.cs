@@ -146,11 +146,11 @@ public class RoverTests
         PlateauSize testPlateauSize = new(5, 5);
         Plateau testPlateau = new(testPlateauSize);
 
-        int expectedY = 0;
+        Position expected = new(3, 0, CompassDirection.W);
 
         testRover.CollisionCheck(testPlateau);
 
-        Assert.That(testRover.CurrentPosition.Y, Is.EqualTo(expectedY));
+        Assert.That(testRover.CurrentPosition, Is.EqualTo(expected));
     }
 
     [Test]
@@ -162,11 +162,11 @@ public class RoverTests
         PlateauSize testPlateauSize = new(5, 5);
         Plateau testPlateau = new(testPlateauSize);
 
-        int expectedX = 0;
+        Position expected = new(0, 3, CompassDirection.W);
 
         testRover.CollisionCheck(testPlateau);
 
-        Assert.That(testRover.CurrentPosition.X, Is.EqualTo(expectedX));
+        Assert.That(testRover.CurrentPosition, Is.EqualTo(expected));
     }
 
     [Test]
@@ -178,13 +178,11 @@ public class RoverTests
         PlateauSize testPlateauSize = new(5, 5);
         Plateau testPlateau = new(testPlateauSize);
 
-        int expectedX = 0;
-        int expectedY = 0;
+        Position expected = new(0, 0, CompassDirection.W);
 
         testRover.CollisionCheck(testPlateau);
 
-        Assert.That(testRover.CurrentPosition.X, Is.EqualTo(expectedX));
-        Assert.That(testRover.CurrentPosition.Y, Is.EqualTo(expectedY));
+        Assert.That(testRover.CurrentPosition, Is.EqualTo(expected));
     }
 
     [Test]
@@ -196,11 +194,11 @@ public class RoverTests
         PlateauSize testPlateauSize = new(5, 5);
         Plateau testPlateau = new(testPlateauSize);
 
-        int expectedX = 5;
+        Position expected = new(5, 3, CompassDirection.W);
 
         testRover.CollisionCheck(testPlateau);
 
-        Assert.That(testRover.CurrentPosition.X, Is.EqualTo(expectedX));
+        Assert.That(testRover.CurrentPosition, Is.EqualTo(expected));
     }
 
     [Test]
@@ -212,11 +210,11 @@ public class RoverTests
         PlateauSize testPlateauSize = new(5, 5);
         Plateau testPlateau = new(testPlateauSize);
 
-        int expectedY = 5;
+        Position expected = new(3, 5, CompassDirection.W);
 
         testRover.CollisionCheck(testPlateau);
 
-        Assert.That(testRover.CurrentPosition.Y, Is.EqualTo(expectedY));
+        Assert.That(testRover.CurrentPosition, Is.EqualTo(expected));
     }
 
     [Test]
@@ -228,12 +226,10 @@ public class RoverTests
         PlateauSize testPlateauSize = new(5, 5);
         Plateau testPlateau = new(testPlateauSize);
 
-        int expectedX = 5;
-        int expectedY = 5;
+        Position expected = new(5, 5, CompassDirection.W);
 
         testRover.CollisionCheck(testPlateau);
 
-        Assert.That(testRover.CurrentPosition.X, Is.EqualTo(expectedX));
-        Assert.That(testRover.CurrentPosition.Y, Is.EqualTo(expectedY));
+        Assert.That(testRover.CurrentPosition, Is.EqualTo(expected));
     }
 }
