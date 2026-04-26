@@ -1,6 +1,7 @@
 ﻿using MarsRover.Console.Data;
 using MarsRover.Console.Parsers;
 using MarsRover.Console.Plateaus;
+using MarsRover.Console.Rovers;
 using static System.Console;
 
 namespace MarsRover.Console.UI
@@ -17,6 +18,9 @@ namespace MarsRover.Console.UI
                 if (size == null) continue;
                 Plateau plateau = new(size);
 
+                Position startingPos = GetInitialPosition(plateau);
+                if (startingPos == null) continue;
+                Rover rover = new Rover(startingPos);
                 break;
             }
         }
@@ -34,6 +38,23 @@ namespace MarsRover.Console.UI
             catch (ArgumentException)
             {
                 WriteLine("Invalid format. Please enter two positive integers separated by a space.");
+                return null!;
+            }
+        }
+
+        private Position GetInitialPosition(Plateau plateau)
+        {
+            Write("Enter Initial Rover Position (e.g., 2 4 W): ");
+            string input = ReadLine()!;
+            string parsedPos = PositionParser.RawPositionParser(input);
+
+            try
+            {
+                return PositionParser.GetPosition(parsedPos, plateau.Size);
+            }
+            catch (ArgumentException)
+            {
+                WriteLine("Invalid format. Please enter two positive integers within the plateau bounds and a direction separated by a space.");
                 return null!;
             }
         }
