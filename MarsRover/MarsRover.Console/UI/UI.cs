@@ -27,6 +27,7 @@ namespace MarsRover.Console.UI
                 if (instructions == null) continue;
 
                 InstructionManager.PerformInstructions(instructions, rover, plateau);
+                OutputResult(rover);
 
                 break;
             }
@@ -81,6 +82,12 @@ namespace MarsRover.Console.UI
             }
 
             return instructions;
+        }
+
+        private void OutputResult(Rover rover)
+        {
+            //TODO: add rover name to rover for better output
+            WriteLine($"\nRover moved to X: {rover.CurrentPosition.X}, Y: {rover.CurrentPosition.Y}.\nIt is now facing: {rover.CurrentPosition.Facing}.");
         }
     }
 }
