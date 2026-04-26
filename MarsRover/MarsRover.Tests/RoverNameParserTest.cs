@@ -105,5 +105,15 @@ namespace MarsRover.Tests
 
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
+        [TestCase("Bob Smith", "Bobsmith")]
+        [TestCase("Ethan Berry", "Ethanberry")]
+        public void RoverNameParser_ShouldRetainSingleNameFormatting_WhenGivenStringsSeperatedByHyphensOrSpaces(string input, string expected)
+        {
+            string? result = RoverNameParser.GetFormattedName(input);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }
