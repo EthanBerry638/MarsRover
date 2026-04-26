@@ -75,9 +75,21 @@ namespace MarsRover.Tests
         [TestCase("Ethan123")]
         [TestCase("123Ethan")]
         [TestCase("E1t2h3a4n")]
-        public void RoverName_ShouldStripNumbers_WhenStringIsAlphaNumeric(string input)
+        public void RoverNameParser_ShouldStripNumbers_WhenStringIsAlphaNumeric(string input)
         {
             string expected = "Ethan";
+
+            string? result = RoverNameParser.GetFormattedName(input);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [Test]
+        [TestCase("e")]
+        [TestCase("E")]
+        public void RoverNameParser_ShouldWorkCorrectly_WhenGivenASingleCharacter(string input)
+        {
+            string expected = "E";
 
             string? result = RoverNameParser.GetFormattedName(input);
 
