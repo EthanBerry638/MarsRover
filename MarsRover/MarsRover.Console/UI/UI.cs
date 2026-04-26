@@ -14,13 +14,18 @@ namespace MarsRover.Console.UI
 
             while (true)
             {
-                PlateauSize size = GetStartingPlateau();
+                PlateauSize? size = GetStartingPlateau();
                 if (size == null) continue;
                 Plateau plateau = new(size);
 
-                Position startingPos = GetInitialPosition(plateau);
+                Position? startingPos = GetInitialPosition(plateau);
                 if (startingPos == null) continue;
                 Rover rover = new Rover(startingPos);
+
+
+                List<Instruction>? instructions = GetInstructions();
+                if (instructions == null) continue; 
+
                 break;
             }
         }
@@ -54,9 +59,26 @@ namespace MarsRover.Console.UI
             }
             catch (ArgumentException)
             {
-                WriteLine("Invalid format. Please enter two positive integers within the plateau bounds and a direction separated by a space.");
+                WriteLine("Invalid format. Please enter two positive integers within the plateau bounds and a direction separated by spaces.");
                 return null;
             }
+        }
+
+        private List<Instruction>? GetInstructions()
+        {
+            Write("Enter Movement and Direction Instructions (e.g., LRM): ");
+            string? input = ReadLine();
+
+            string parsedInstruction = InstructionParser.ParseInstruction(input!);
+            List<Instruction> instructions = InstructionParser.GetInstructions(parsedInstruction);
+
+            if (instructions.Count == 0)
+            {
+                WriteLine("Invalid format. Please enter instructions containing only L, M, or R.");
+                return null;
+            }
+
+            return instructions;
         }
     }
 }
