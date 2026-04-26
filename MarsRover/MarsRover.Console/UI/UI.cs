@@ -21,7 +21,8 @@ namespace MarsRover.Console.UI
 
                 Position? startingPos = GetInitialPosition(plateau);
                 if (startingPos == null) continue;
-                Rover rover = new Rover(startingPos);
+                string? roverName = GetRoverName();
+                Rover rover = CreateRover(startingPos, roverName);
 
                 List<Instruction>? instructions = GetInstructions();
                 if (instructions == null) continue;
@@ -84,10 +85,34 @@ namespace MarsRover.Console.UI
             return instructions;
         }
 
+        private string? GetRoverName()
+        {
+            Write("Enter Rover Name (optional, leave blank if you want): ");
+            string? input = ReadLine();
+
+            return RoverNameParser.GetFormattedName(input!);
+        }
+
+        private Rover CreateRover(Position startingPos, string? roverName)
+        {
+            if (roverName == null)
+            {
+                return new Rover(startingPos);
+            }
+
+            return new Rover(startingPos, roverName);
+        }
+
         private void OutputResult(Rover rover)
         {
-            //TODO: add rover name to rover for better output
-            WriteLine($"\nRover moved to X: {rover.CurrentPosition.X}, Y: {rover.CurrentPosition.Y}.\nIt is now facing: {rover.CurrentPosition.Facing}.");
+            if (rover.Name == "")
+            {
+                WriteLine($"\nRover moved to X: {rover.CurrentPosition.X}, Y: {rover.CurrentPosition.Y}.\nIt is now facing: {rover.CurrentPosition.Facing}.");
+            }
+            else
+            {
+                WriteLine($"\n{rover.Name} moved to X: {rover.CurrentPosition.X}, Y: {rover.CurrentPosition.Y}.\nIt is now facing: {rover.CurrentPosition.Facing}.");
+            }
         }
 
         private bool ShouldExit()
