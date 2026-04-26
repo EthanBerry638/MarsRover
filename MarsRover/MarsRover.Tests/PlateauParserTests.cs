@@ -1,5 +1,6 @@
 ﻿using MarsRover.Console.Data;
 using MarsRover.Console.Parsers;
+using MarsRover.Console.Exceptions;
 
 namespace MarsRover.Tests;
 
@@ -109,7 +110,7 @@ public class PlateauParserTests
     {
         int[] input = [];
 
-        Assert.Throws<ArgumentException>(() => PlateauParser.GetPlateauSize(input));
+        Assert.Throws<InvalidPlateauSizeException>(() => PlateauParser.GetPlateauSize(input));
     }
 
     [Test]

@@ -1,4 +1,5 @@
 ﻿using MarsRover.Console.Data;
+using MarsRover.Console.Exceptions;
 using MarsRover.Console.InstructionExecutor;
 using MarsRover.Console.Parsers;
 using MarsRover.Console.Plateaus;
@@ -44,9 +45,9 @@ namespace MarsRover.Console.UI
             {
                 return PlateauParser.GetPlateauSize(rawData);
             }
-            catch (ArgumentException)
+            catch (InvalidPlateauSizeException ex)
             {
-                WriteLine("\nInvalid format. Please enter two positive integers separated by a space.\n");
+                WriteLine(ex.Message);
                 return null;
             }
         }
