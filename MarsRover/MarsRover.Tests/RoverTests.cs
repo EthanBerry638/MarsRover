@@ -232,4 +232,20 @@ public class RoverTests
 
         Assert.That(testRover.CurrentPosition, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void CollisionCheck_ShouldDoNothing_WhenRoverIsInBounds()
+    {
+        Position testPos = new(3, 3, CompassDirection.W);
+        Rover testRover = new(testPos);
+
+        PlateauSize testPlateauSize = new(5, 5);
+        Plateau testPlateau = new(testPlateauSize);
+
+        Position expected = new(3, 3, CompassDirection.W);
+
+        testRover.CollisionCheck(testPlateau);
+
+        Assert.That(testRover.CurrentPosition, Is.EqualTo(expected));
+    }
 }
