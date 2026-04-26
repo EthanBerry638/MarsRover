@@ -2,6 +2,6 @@
 {
     public class InvalidPlateauSizeException : Exception
     {
-        public InvalidPlateauSizeException(string message) : base(message) {}
+        public InvalidPlateauSizeException(string message) : base(message) { }
     }
 }

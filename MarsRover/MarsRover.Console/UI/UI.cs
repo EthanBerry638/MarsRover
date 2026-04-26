@@ -1,5 +1,5 @@
-﻿using MarsRover.Console.Data;
-using MarsRover.Console.Custom_Exceptions;
+﻿using MarsRover.Console.Custom_Exceptions;
+using MarsRover.Console.Data;
 using MarsRover.Console.InstructionExecutor;
 using MarsRover.Console.Parsers;
 using MarsRover.Console.Plateaus;
@@ -105,15 +105,8 @@ namespace MarsRover.Console.UI
         }
 
         private void OutputResult(Rover rover)
-        {
-            if (rover.Name == "")
-            {
-                WriteLine($"\nRover moved to X: {rover.CurrentPosition.X}, Y: {rover.CurrentPosition.Y}.\nIt is now facing: {rover.CurrentPosition.Facing}.");
-            }
-            else
-            {
-                WriteLine($"\n{rover.Name} moved to X: {rover.CurrentPosition.X}, Y: {rover.CurrentPosition.Y}.\nIt is now facing: {rover.CurrentPosition.Facing}.");
-            }
+        { 
+            WriteLine($"\n{rover.Name} moved to X: {rover.CurrentPosition.X}, Y: {rover.CurrentPosition.Y}.\nIt is now facing: {rover.CurrentPosition.Facing}.");
         }
 
         private bool ShouldExit()

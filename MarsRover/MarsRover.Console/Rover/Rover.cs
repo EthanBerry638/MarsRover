@@ -4,7 +4,7 @@ using MarsRover.Console.Plateaus;
 
 namespace MarsRover.Console.Rovers
 {
-    public class Rover(Position startingPosition, string name = "")
+    public class Rover(Position startingPosition, string name = "Rover")
     {
         public Position CurrentPosition { get; private set; } = startingPosition;
         public string Name { get; private set; } = name;

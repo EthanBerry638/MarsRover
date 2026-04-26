@@ -26,7 +26,7 @@ namespace MarsRover.Console.Parsers
             }
 
             if (sb.Length == 0) return null;
- 
+
             return sb.ToString().Trim();
         }
     }

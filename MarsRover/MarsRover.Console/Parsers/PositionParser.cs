@@ -1,6 +1,6 @@
-﻿using MarsRover.Console.Data;
+﻿using MarsRover.Console.Custom_Exceptions;
+using MarsRover.Console.Data;
 using MarsRover.Console.Directions;
-using MarsRover.Console.Custom_Exceptions;
 
 namespace MarsRover.Console.Parsers
 {
