@@ -1,4 +1,5 @@
 ﻿using MarsRover.Console.Data;
+using MarsRover.Console.InstructionExecutor;
 using MarsRover.Console.Parsers;
 using MarsRover.Console.Plateaus;
 using MarsRover.Console.Rovers;
@@ -22,9 +23,10 @@ namespace MarsRover.Console.UI
                 if (startingPos == null) continue;
                 Rover rover = new Rover(startingPos);
 
-
                 List<Instruction>? instructions = GetInstructions();
-                if (instructions == null) continue; 
+                if (instructions == null) continue;
+
+                InstructionManager.PerformInstructions(instructions, rover, plateau);
 
                 break;
             }
