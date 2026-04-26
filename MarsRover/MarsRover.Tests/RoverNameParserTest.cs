@@ -10,7 +10,7 @@ namespace MarsRover.Tests
         [TestCase("              ")]
         public void RoverNameParser_ShouldReturnNull_WhenGivenNullOrEmptyString(string? input)
         {
-            string? result = RoverNameParser.GetRawName(input!);
+            string? result = RoverNameParser.GetFormattedName(input!);
 
             Assert.That(result, Is.EqualTo(null));
         }
@@ -21,7 +21,7 @@ namespace MarsRover.Tests
             string input = "Ethan";
             string expected = "Ethan";
 
-            string? result = RoverNameParser.GetRawName(input);
+            string? result = RoverNameParser.GetFormattedName(input);
 
             Assert.That(result, Is.EqualTo(expected));
         }
@@ -32,7 +32,7 @@ namespace MarsRover.Tests
             string input = "    Ethan      ";
             string expected = "Ethan";
 
-            string? result = RoverNameParser.GetRawName(input);
+            string? result = RoverNameParser.GetFormattedName(input);
 
             Assert.That(result, Is.EqualTo(expected));
         }

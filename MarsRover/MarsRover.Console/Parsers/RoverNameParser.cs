@@ -2,7 +2,7 @@
 {
     public static class RoverNameParser
     {
-        public static string? GetRawName(string rawInput)
+        public static string? GetFormattedName(string rawInput)
         {
             if (string.IsNullOrWhiteSpace(rawInput)) return null;
             return rawInput;
