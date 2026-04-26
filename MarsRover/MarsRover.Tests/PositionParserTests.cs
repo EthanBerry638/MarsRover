@@ -130,10 +130,10 @@ public class PositionParserTests
     }
 
     [Test]
-    public void GetPosition_ShouldThrowException_WhenGivenAParsedStringButThePositionIsNotOnTheGrind()
+    public void GetPosition_ShouldThrowException_WhenGivenAParsedStringButThePositionIsNotOnTheGrid()
     {
         string input = "20 20 N";
-        Position expected = new(20, 20, CompassDirection.N);
+
         PlateauSize plateau = new(5, 5);
 
         Assert.Throws<InvalidPositionException>(() => PositionParser.GetPosition(input, plateau));
