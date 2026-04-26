@@ -59,5 +59,16 @@ namespace MarsRover.Tests
 
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void RoverName_ShouldCleanUpperCaseLettersInMiddleOfStringToLowerCase_WhenGivenStringWithSomeLowerCaseLetters()
+        {
+            string input = "EtHAn";
+            string expected = "Ethan";
+
+            string? result = RoverNameParser.GetFormattedName(input);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }
