@@ -23,7 +23,7 @@ public class PlateauParserTests
         string? input = null;
         int[] expected = [];
 
-        int[] result = PlateauParser.ParseRawPlateau(input);
+        int[] result = PlateauParser.ParseRawPlateau(input!);
 
         Assert.That(expected, Is.EqualTo(result));
     }
