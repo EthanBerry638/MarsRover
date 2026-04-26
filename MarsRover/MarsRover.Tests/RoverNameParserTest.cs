@@ -19,10 +19,11 @@ namespace MarsRover.Tests
         public void RoverNameParser_ShouldReturnName_WhenGivenAValidString()
         {
             string input = "Ethan";
+            string expected = "Ethan";
 
             string? result = RoverNameParser.GetRawName(input);
 
-            Assert.That(result, Is.EqualTo(input));
+            Assert.That(result, Is.EqualTo(expected));
         }
 
         [Test]
