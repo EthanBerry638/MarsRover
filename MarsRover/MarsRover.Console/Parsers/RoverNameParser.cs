@@ -10,12 +10,22 @@ namespace MarsRover.Console.Parsers
 
             var sb = new StringBuilder();
 
-            sb.Append(char.ToUpper(rawInput[0]));
-
-            for (int i = 1; i < rawInput.Length; i++)
+            foreach (char c in rawInput)
             {
-                sb.Append(rawInput[i]);
+                if (char.IsLetter(c))
+                {
+                    if (sb.Length == 0)
+                    {
+                        sb.Append(char.ToUpper(c));
+                    }
+                    else
+                    {
+                        sb.Append(c);
+                    }
+                }
             }
+
+            if (sb.Length == 0) return null;
  
             return sb.ToString().Trim();
         }
