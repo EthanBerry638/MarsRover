@@ -70,5 +70,18 @@ namespace MarsRover.Tests
 
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
+        [TestCase("Ethan123")]
+        [TestCase("123Ethan")]
+        [TestCase("E1t2h3a4n")]
+        public void RoverName_ShouldStripNumbers_WhenStringIsAlphaNumeric(string input)
+        {
+            string expected = "Ethan";
+
+            string? result = RoverNameParser.GetFormattedName(input);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }
