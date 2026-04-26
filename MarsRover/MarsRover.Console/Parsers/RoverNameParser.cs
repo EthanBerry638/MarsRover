@@ -20,7 +20,7 @@ namespace MarsRover.Console.Parsers
                     }
                     else
                     {
-                        sb.Append(c);
+                        sb.Append(char.ToLower(c));
                     }
                 }
             }
