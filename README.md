@@ -29,3 +29,12 @@ Follow the prompts to set the plateau size (e.g., 5 5), initial rover position (
 You should get: "Rover moved to X: 1, Y: 3. It is now facing: N." in the terminal.
 
 Enjoy!
+
+## 🛣️ Roadmap 
+Collision Output: Telling the user where and when they collided as it happens.
+
+Multiple Rovers: Including collision detection between rovers.
+
+Obstacles: Immovable objects that the rover would collide with.
+
+Live Map: A visual representation of the plateau and the rovers moving on it in the console.
