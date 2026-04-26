@@ -2,9 +2,9 @@
 {
     public static class RoverNameParser
     {
-        public static string GetRawName(string rawInput)
+        public static string? GetRawName(string rawInput)
         {
-            return "a";
+            return null;
         }
     }
 }
