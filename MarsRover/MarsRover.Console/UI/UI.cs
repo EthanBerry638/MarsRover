@@ -65,6 +65,11 @@ namespace MarsRover.Console.UI
                 WriteLine("\nInvalid format. Please enter two positive integers within the plateau bounds and a direction separated by spaces.\n");
                 return null;
             }
+            catch (FormatException)
+            {
+                WriteLine("\nInvalid format. Please enter two positive integers within the plateau bounds and a direction separated by spaces.\n");
+                return null;
+            }
         }
 
         private List<Instruction>? GetInstructions()
