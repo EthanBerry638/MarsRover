@@ -1,17 +1,3 @@
-﻿using MarsRover.Console.Data;
-using MarsRover.Console.Parsers;
+﻿using MarsRover.Console.UI;
 
-string rawInstruction = InstructionParser.ParseInstruction("LMLMLMLMM");
-List<Instruction> instructions = InstructionParser.GetInstructions(rawInstruction);
-
-foreach (Instruction instruction in instructions) Console.WriteLine(instruction);
-
-int[] rawPlateau = PlateauParser.ParseRawPlateau("5 5");
-PlateauSize plateau = PlateauParser.GetPlateauSize(rawPlateau);
-
-Console.WriteLine("\n" + plateau);
-
-string rawPosition = PositionParser.RawPositionParser("3 3 E");
-Position position = PositionParser.GetPosition(rawPosition, plateau);
-
-Console.WriteLine("\n" + position);
+UI ui = new();
