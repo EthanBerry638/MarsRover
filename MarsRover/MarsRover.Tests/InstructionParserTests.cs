@@ -1,6 +1,5 @@
 ﻿using MarsRover.Console.Data;
 using MarsRover.Console.Parsers;
-using NUnit.Framework;
 
 namespace MarsRover.Tests;
 

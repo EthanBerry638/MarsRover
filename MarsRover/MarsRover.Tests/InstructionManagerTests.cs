@@ -1,9 +1,8 @@
-﻿using NUnit;
-using MarsRover.Console.InstructionExecutor;
-using MarsRover.Console.Data;
+﻿using MarsRover.Console.Data;
 using MarsRover.Console.Directions;
-using MarsRover.Console.Rovers;
+using MarsRover.Console.InstructionExecutor;
 using MarsRover.Console.Plateaus;
+using MarsRover.Console.Rovers;
 
 namespace MarsRover.Tests
 {

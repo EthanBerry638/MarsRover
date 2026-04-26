@@ -1,20 +1,14 @@
 ﻿using MarsRover.Console.Data;
 using MarsRover.Console.Directions;
 using MarsRover.Console.Plateaus;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MarsRover.Console.Rovers
 {
-    public class Rover (Position startingPosition)
+    public class Rover(Position startingPosition)
     {
         public Position CurrentPosition { get; private set; } = startingPosition;
 
-        public CompassDirection Rotate (Instruction instruction)
+        public CompassDirection Rotate(Instruction instruction)
         {
             if (instruction == Instruction.M) return CurrentPosition.Facing;
 
@@ -31,10 +25,10 @@ namespace MarsRover.Console.Rovers
             }
 
             CurrentPosition.Facing = (CompassDirection)(newDir);
-            return CurrentPosition.Facing; 
+            return CurrentPosition.Facing;
         }
 
-        public Position Move(Instruction instruction) 
+        public Position Move(Instruction instruction)
         {
             if (instruction != Instruction.M) return CurrentPosition;
 

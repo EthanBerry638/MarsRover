@@ -1,10 +1,5 @@
-﻿using MarsRover.Console.Directions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using MarsRover.Console.Data;
 using System.Text;
-using System.Threading.Tasks;
-using MarsRover.Console.Data;
 
 namespace MarsRover.Console.Parsers
 {
@@ -22,7 +17,7 @@ namespace MarsRover.Console.Parsers
 
                 if (upperLetter == 'L' || upperLetter == 'M' || upperLetter == 'R')
                 {
-                   sb.Append(upperLetter);
+                    sb.Append(upperLetter);
                 }
             }
 

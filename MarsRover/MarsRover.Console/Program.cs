@@ -1,5 +1,4 @@
 ﻿using MarsRover.Console.Data;
-using MarsRover.Console.Directions;
 using MarsRover.Console.Parsers;
 
 string rawInstruction = InstructionParser.ParseInstruction("LMLMLMLMM");

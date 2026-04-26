@@ -1,7 +1,6 @@
-﻿using MarsRover.Console.Parsers;
-using MarsRover.Console.Data;
+﻿using MarsRover.Console.Data;
 using MarsRover.Console.Directions;
-using NUnit.Framework;
+using MarsRover.Console.Parsers;
 
 namespace MarsRover.Tests;
 
@@ -29,7 +28,7 @@ public class PositionParserTests
         Assert.That(result, Is.EqualTo(expected));
     }
 
-    [Test] 
+    [Test]
     public void RawPositionParser_ShouldReturnEmptyString_WhenGivenStringWithOneLetter()
     {
         string? input = "A";

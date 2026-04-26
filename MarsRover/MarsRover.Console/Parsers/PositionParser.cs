@@ -1,10 +1,5 @@
-﻿using MarsRover.Console.Directions;
-using MarsRover.Console.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MarsRover.Console.Data;
+using MarsRover.Console.Directions;
 
 namespace MarsRover.Console.Parsers
 {
@@ -13,8 +8,8 @@ namespace MarsRover.Console.Parsers
         public static string RawPositionParser(string rawPosition)
         {
             if (string.IsNullOrEmpty(rawPosition)) return "";
-  
-            
+
+
             string[] parts = rawPosition.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
             if (parts.Length != 3) return "";

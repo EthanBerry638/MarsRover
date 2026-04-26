@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MarsRover.Console.Data;
-using MarsRover.Console.Rovers;
+﻿using MarsRover.Console.Data;
 using MarsRover.Console.Plateaus;
-using MarsRover.Console.Directions;
+using MarsRover.Console.Rovers;
 
 namespace MarsRover.Console.InstructionExecutor
 {
