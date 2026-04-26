@@ -45,7 +45,7 @@ namespace MarsRover.Console.UI
             }
             catch (ArgumentException)
             {
-                WriteLine("\nInvalid format. Please enter two positive integers separated by a space.");
+                WriteLine("\nInvalid format. Please enter two positive integers separated by a space.\n");
                 return null;
             }
         }
@@ -62,7 +62,7 @@ namespace MarsRover.Console.UI
             }
             catch (ArgumentException)
             {
-                WriteLine("\nInvalid format. Please enter two positive integers within the plateau bounds and a direction separated by spaces.");
+                WriteLine("\nInvalid format. Please enter two positive integers within the plateau bounds and a direction separated by spaces.\n");
                 return null;
             }
         }
@@ -77,7 +77,7 @@ namespace MarsRover.Console.UI
 
             if (instructions.Count == 0)
             {
-                WriteLine("\nInvalid format. Please enter instructions containing only L, M, or R.");
+                WriteLine("\nInvalid format. Please enter instructions containing only L, M, or R.\n");
                 return null;
             }
 
