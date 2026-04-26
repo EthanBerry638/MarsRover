@@ -36,5 +36,16 @@ namespace MarsRover.Tests
 
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
+        public void RoverName_ShouldCapitaliseFirstLetterOfString_WhenGivenNameWithLowerCaseFirstChar()
+        {
+            string input = "ethan";
+            string expected = "Ethan";
+
+            string? result = RoverNameParser.GetFormattedName(input);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }
