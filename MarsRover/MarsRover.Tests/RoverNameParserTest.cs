@@ -95,5 +95,15 @@ namespace MarsRover.Tests
 
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
+        [TestCase("rené", "René")]
+        [TestCase("ÖZIL", "Özil")]
+        public void RoverNameParser_ShouldSupportUnicodeLetters(string input, string expected)
+        {
+            string? result = RoverNameParser.GetFormattedName(input);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }
