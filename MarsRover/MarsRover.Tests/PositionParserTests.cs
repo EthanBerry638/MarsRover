@@ -138,4 +138,13 @@ public class PositionParserTests
 
         Assert.Throws<InvalidPositionException>(() => PositionParser.GetPosition(input, plateau));
     }
+
+    [Test]
+    [TestCase("")]
+    public void GetPosition_ShouldThrowInvalidFormatException_WhenGivenBadInput(string input)
+    {
+        PlateauSize plateau = new(5, 5);
+
+        Assert.Throws<InvalidPositionException>(() => PositionParser.GetPosition(input, plateau));
+    }
 }
