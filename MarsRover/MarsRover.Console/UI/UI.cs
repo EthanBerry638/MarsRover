@@ -26,10 +26,16 @@ namespace MarsRover.Console.UI
                 Rover rover = CreateRover(startingPos, roverName);
 
                 List<Instruction>? instructions = GetInstructions();
-                if (instructions == null) continue;
 
-                InstructionManager.PerformInstructions(instructions, rover, plateau);
-                OutputResult(rover);
+                if (instructions != null)
+                {
+                    InstructionManager.PerformInstructions(instructions, rover, plateau);
+                    WriteLine($"\n{rover.Name} moved to X: {rover.CurrentPosition.X}, Y: {rover.CurrentPosition.Y}.\nIt is now facing: {rover.CurrentPosition.Facing}.");
+                }
+                else
+                {
+                    WriteLine($"\n{rover.Name} didn't recieve any valid instructions so it stayed at X: {rover.CurrentPosition.X}, Y: {rover.CurrentPosition.Y}.\nIt is facing: {rover.CurrentPosition.Facing}.");
+                }
 
                 if (ShouldExit()) break;
             }
@@ -79,7 +85,6 @@ namespace MarsRover.Console.UI
 
             if (instructions.Count == 0)
             {
-                WriteLine("\nInvalid format. Please enter instructions containing only L, M, or R.\n");
                 return null;
             }
 
@@ -102,11 +107,6 @@ namespace MarsRover.Console.UI
             }
 
             return new Rover(startingPos, roverName);
-        }
-
-        private void OutputResult(Rover rover)
-        { 
-            WriteLine($"\n{rover.Name} moved to X: {rover.CurrentPosition.X}, Y: {rover.CurrentPosition.Y}.\nIt is now facing: {rover.CurrentPosition.Facing}.");
         }
 
         private bool ShouldExit()
