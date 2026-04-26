@@ -60,12 +60,7 @@ namespace MarsRover.Console.UI
             {
                 return PositionParser.GetPosition(parsedPos, plateau.Size);
             }
-            catch (ArgumentException)
-            {
-                WriteLine("\nInvalid format. Please enter two positive integers within the plateau bounds and a direction separated by spaces.\n");
-                return null;
-            }
-            catch (FormatException)
+            catch (Exception)
             {
                 WriteLine("\nInvalid format. Please enter two positive integers within the plateau bounds and a direction separated by spaces.\n");
                 return null;
