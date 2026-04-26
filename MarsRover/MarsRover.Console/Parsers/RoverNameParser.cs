@@ -5,7 +5,7 @@
         public static string? GetFormattedName(string rawInput)
         {
             if (string.IsNullOrWhiteSpace(rawInput)) return null;
-            return rawInput;
+            return rawInput.Trim();
         }
     }
 }
