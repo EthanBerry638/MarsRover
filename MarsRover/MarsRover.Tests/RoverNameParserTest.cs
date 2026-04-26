@@ -24,5 +24,16 @@ namespace MarsRover.Tests
 
             Assert.That(result, Is.EqualTo(input));
         }
+
+        [Test]
+        public void RoverName_ShouldFormatNameIntoACleanString_WhenGivenNameWithLeadingAndTrailingWhitespace()
+        {
+            string input = "    Ethan      ";
+            string expected = "Ethan";
+
+            string? result = RoverNameParser.GetRawName(input);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }
