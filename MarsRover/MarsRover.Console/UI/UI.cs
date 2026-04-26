@@ -29,7 +29,7 @@ namespace MarsRover.Console.UI
                 InstructionManager.PerformInstructions(instructions, rover, plateau);
                 OutputResult(rover);
 
-                break;
+                if (ShouldExit()) break;
             }
         }
 
@@ -88,6 +88,13 @@ namespace MarsRover.Console.UI
         {
             //TODO: add rover name to rover for better output
             WriteLine($"\nRover moved to X: {rover.CurrentPosition.X}, Y: {rover.CurrentPosition.Y}.\nIt is now facing: {rover.CurrentPosition.Facing}.");
+        }
+
+        private bool ShouldExit()
+        {
+            Write("\nWould you like to deploy another rover? (Y/N): \n");
+            string? input = ReadLine()?.ToUpper();
+            return input == "N" || input == "EXIT";
         }
     }
 }
