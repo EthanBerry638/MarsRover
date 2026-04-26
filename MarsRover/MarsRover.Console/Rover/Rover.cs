@@ -57,38 +57,13 @@ namespace MarsRover.Console.Rovers
             return CurrentPosition;
         }
 
-        private Position CorrectCollision(Dictionary<string, int> borderingAxis, Plateau plateau)
+        public void CollisionCheck(Plateau plateau)
         {
-            if (borderingAxis.Count == 0) return CurrentPosition;
+            if (CurrentPosition.X < 0) CurrentPosition.X = 0;
+            else if (CurrentPosition.X > plateau.Size.X) CurrentPosition.X = plateau.Size.X;
 
-            foreach (var keyValue in borderingAxis)
-            {
-                if (keyValue.Key == "X")
-                {
-                    if (keyValue.Value > 0) CurrentPosition.X = plateau.Size.X;
-                    else CurrentPosition.X = 0;
-                }
-
-                if (keyValue.Key == "Y")
-                {
-                    if (keyValue.Value > 0) CurrentPosition.Y = plateau.Size.Y;
-                    else CurrentPosition.Y = 0;
-
-                }
-            }
-
-            return CurrentPosition;
-        }
-
-        public Position CollisionCheck(Plateau plateau)
-        {
-            if (plateau.IsBordering(CurrentPosition))
-            {
-                Dictionary<string, int> borderingAxis = plateau.GetCollidingAxis(CurrentPosition);
-
-                return CorrectCollision(borderingAxis, plateau);
-            }
-            else return CurrentPosition;
+            if (CurrentPosition.Y < 0) CurrentPosition.Y = 0;
+            else if (CurrentPosition.Y > plateau.Size.Y) CurrentPosition.Y = plateau.Size.Y;
         }
     }
 }

@@ -140,7 +140,7 @@ public class RoverTests
     }
 
     [Test]
-    public void CorrectCollision_ShouldReturnNewRoverPosition_WhenCollidingWithYAxisOnLowerBound()
+    public void CollisionCheck_ShouldReturnNewRoverPosition_WhenCollidingWithYAxisOnLowerBound()
     {
         Position testPos = new(3, -1, CompassDirection.W);
         Rover testRover = new(testPos);
@@ -148,20 +148,15 @@ public class RoverTests
         PlateauSize testPlateauSize = new(5, 5);
         Plateau testPlateau = new(testPlateauSize);
 
-        Dictionary<string, int> testBorderingAxis = new Dictionary<string, int>
-            {
-                { "Y", -1 }
-            };
+        int expectedY = 0;
 
-        Position expected = new(3, 0, CompassDirection.W);
+        testRover.CollisionCheck(testPlateau);
 
-        Position result = testRover.CollisionCheck(testPlateau);
-
-        Assert.That(result, Is.EqualTo(expected));
+        Assert.That(testRover.CurrentPosition.Y, Is.EqualTo(expectedY));
     }
 
     [Test]
-    public void CorrectCollision_ShouldReturnNewRoverPosition_WhenCollidingWithXAxisOnLowerBound()
+    public void CollisionCheck_ShouldReturnNewRoverPosition_WhenCollidingWithXAxisOnLowerBound()
     {
         Position testPos = new(-1, 3, CompassDirection.W);
         Rover testRover = new(testPos);
@@ -169,20 +164,15 @@ public class RoverTests
         PlateauSize testPlateauSize = new(5, 5);
         Plateau testPlateau = new(testPlateauSize);
 
-        Dictionary<string, int> testBorderingAxis = new Dictionary<string, int>
-            {
-                { "X", -1 }
-            };
+        int expectedX = 0;
 
-        Position expected = new(0, 3, CompassDirection.W);
+        testRover.CollisionCheck(testPlateau);
 
-        Position result = testRover.CollisionCheck(testPlateau);
-
-        Assert.That(result, Is.EqualTo(expected));
+        Assert.That(testRover.CurrentPosition.X, Is.EqualTo(expectedX));
     }
 
     [Test]
-    public void CorrectCollision_ShouldReturnNewRoverPosition_WhenCollidingWithXAndYAxisOnLowerBound()
+    public void CollisionCheck_ShouldReturnNewRoverPosition_WhenCollidingWithXAndYAxisOnLowerBound()
     {
         Position testPos = new(-1, -1, CompassDirection.W);
         Rover testRover = new(testPos);
@@ -190,21 +180,17 @@ public class RoverTests
         PlateauSize testPlateauSize = new(5, 5);
         Plateau testPlateau = new(testPlateauSize);
 
-        Dictionary<string, int> testBorderingAxis = new Dictionary<string, int>
-            {
-                { "X", -1 },
-                { "Y", -1 }
-            };
+        int expectedX = 0;
+        int expectedY = 0;
 
-        Position expected = new(0, 0, CompassDirection.W);
+        testRover.CollisionCheck(testPlateau);
 
-        Position result = testRover.CollisionCheck(testPlateau);
-
-        Assert.That(result, Is.EqualTo(expected));
+        Assert.That(testRover.CurrentPosition.X, Is.EqualTo(expectedX));
+        Assert.That(testRover.CurrentPosition.Y, Is.EqualTo(expectedY));
     }
 
     [Test]
-    public void CorrectCollision_ShouldReturnExpectedRoverPosition_WhenCollidingWithXAxisOnUpperBound()
+    public void CollisionCheck_ShouldReturnExpectedRoverPosition_WhenCollidingWithXAxisOnUpperBound()
     {
         Position testPos = new(6, 3, CompassDirection.W);
         Rover testRover = new(testPos);
@@ -212,20 +198,15 @@ public class RoverTests
         PlateauSize testPlateauSize = new(5, 5);
         Plateau testPlateau = new(testPlateauSize);
 
-        Dictionary<string, int> testBorderingAxis = new Dictionary<string, int>
-            {
-                { "X", 6 }
-            };
+        int expectedX = 5;
 
-        Position expected = new(5, 3, CompassDirection.W);
+        testRover.CollisionCheck(testPlateau);
 
-        Position result = testRover.CollisionCheck(testPlateau);
-
-        Assert.That(result, Is.EqualTo(expected));
+        Assert.That(testRover.CurrentPosition.X, Is.EqualTo(expectedX));
     }
 
     [Test]
-    public void CorrectCollision_ShouldReturnExpectedRoverPosition_WhenCollidingWithYAxisOnUpperBound()
+    public void CollisionCheck_ShouldReturnExpectedRoverPosition_WhenCollidingWithYAxisOnUpperBound()
     {
         Position testPos = new(3, 6, CompassDirection.W);
         Rover testRover = new(testPos);
@@ -233,20 +214,15 @@ public class RoverTests
         PlateauSize testPlateauSize = new(5, 5);
         Plateau testPlateau = new(testPlateauSize);
 
-        Dictionary<string, int> testBorderingAxis = new Dictionary<string, int>
-            {
-                { "Y", 6 }
-            };
+        int expectedY = 5;
 
-        Position expected = new(3, 5, CompassDirection.W);
+        testRover.CollisionCheck(testPlateau);
 
-        Position result = testRover.CollisionCheck(testPlateau);
-
-        Assert.That(result, Is.EqualTo(expected));
+        Assert.That(testRover.CurrentPosition.Y, Is.EqualTo(expectedY));
     }
 
     [Test]
-    public void CorrectCollision_ShouldReturnNewRoverPosition_WhenCollidingWithXAndYAxisOnUpperBound()
+    public void CollisionCheck_ShouldReturnNewRoverPosition_WhenCollidingWithXAndYAxisOnUpperBound()
     {
         Position testPos = new(6, 6, CompassDirection.W);
         Rover testRover = new(testPos);
@@ -254,16 +230,12 @@ public class RoverTests
         PlateauSize testPlateauSize = new(5, 5);
         Plateau testPlateau = new(testPlateauSize);
 
-        Dictionary<string, int> testBorderingAxis = new Dictionary<string, int>
-            {
-                { "X", 6 },
-                { "Y", 6 }
-            };
+        int expectedX = 5;
+        int expectedY = 5;
 
-        Position expected = new(5, 5, CompassDirection.W);
+        testRover.CollisionCheck(testPlateau);
 
-        Position result = testRover.CollisionCheck(testPlateau);
-
-        Assert.That(result, Is.EqualTo(expected));
+        Assert.That(testRover.CurrentPosition.X, Is.EqualTo(expectedX));
+        Assert.That(testRover.CurrentPosition.Y, Is.EqualTo(expectedY));
     }
 }
