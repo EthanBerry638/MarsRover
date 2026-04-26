@@ -108,7 +108,7 @@ namespace MarsRover.Tests
 
         [Test]
         [TestCase("Bob Smith", "Bobsmith")]
-        [TestCase("Ethan Berry", "Ethanberry")]
+        [TestCase("Ethan-Berry", "Ethanberry")]
         public void RoverNameParser_ShouldRetainSingleNameFormatting_WhenGivenStringsSeperatedByHyphensOrSpaces(string input, string expected)
         {
             string? result = RoverNameParser.GetFormattedName(input);
