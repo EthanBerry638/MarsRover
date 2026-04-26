@@ -47,5 +47,17 @@ namespace MarsRover.Tests
 
             Assert.That(result, Is.EqualTo(expected));
         }
+
+        [Test]
+        [TestCase("%%3##';#3")]
+        [TestCase("0595850450")]
+        public void RoverName_ShouldReturnNull_WhenOnlyGivenPunctuationOrNumbers(string input)
+        {
+            string? expected = null;
+
+            string? result = RoverNameParser.GetFormattedName(input);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
     }
 }
