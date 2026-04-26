@@ -1,4 +1,5 @@
-﻿using MarsRover.Console.Data;
+﻿using MarsRover.Console.Custom_Exceptions;
+using MarsRover.Console.Data;
 using MarsRover.Console.Directions;
 using MarsRover.Console.Parsers;
 
@@ -135,6 +136,6 @@ public class PositionParserTests
         Position expected = new(20, 20, CompassDirection.N);
         PlateauSize plateau = new(5, 5);
 
-        Assert.Throws<ArgumentException>(() => PositionParser.GetPosition(input, plateau));
+        Assert.Throws<InvalidPositionException>(() => PositionParser.GetPosition(input, plateau));
     }
 }

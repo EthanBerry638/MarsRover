@@ -1,5 +1,5 @@
 ﻿using MarsRover.Console.Data;
-using MarsRover.Console.Exceptions;
+using MarsRover.Console.Custom_Exceptions;
 using MarsRover.Console.InstructionExecutor;
 using MarsRover.Console.Parsers;
 using MarsRover.Console.Plateaus;
@@ -62,9 +62,9 @@ namespace MarsRover.Console.UI
             {
                 return PositionParser.GetPosition(parsedPos, plateau.Size);
             }
-            catch (Exception)
+            catch (InvalidPositionException ex)
             {
-                WriteLine("\nInvalid format. Please enter two positive integers within the plateau bounds and a direction separated by spaces.\n");
+                WriteLine(ex.Message);
                 return null;
             }
         }

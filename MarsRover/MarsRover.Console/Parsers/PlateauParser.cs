@@ -1,5 +1,5 @@
 ﻿using MarsRover.Console.Data;
-using MarsRover.Console.Exceptions;
+using MarsRover.Console.Custom_Exceptions;
 
 namespace MarsRover.Console.Parsers
 {

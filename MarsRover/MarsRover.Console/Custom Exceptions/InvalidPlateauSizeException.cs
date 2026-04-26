@@ -1,4 +1,4 @@
-﻿namespace MarsRover.Console.Exceptions
+﻿namespace MarsRover.Console.Custom_Exceptions
 {
     public class InvalidPlateauSizeException : Exception
     {

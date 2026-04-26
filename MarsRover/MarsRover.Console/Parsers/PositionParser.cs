@@ -1,5 +1,6 @@
 ﻿using MarsRover.Console.Data;
 using MarsRover.Console.Directions;
+using MarsRover.Console.Custom_Exceptions;
 
 namespace MarsRover.Console.Parsers
 {
@@ -29,7 +30,10 @@ namespace MarsRover.Console.Parsers
         {
             string[] parts = parsedPosition.Split(' ');
 
-            if (plateau.X < int.Parse(parts[0]) || plateau.Y < int.Parse(parts[1])) throw new ArgumentException();
+            if (plateau.X < int.Parse(parts[0]) || plateau.Y < int.Parse(parts[1]))
+            {
+                throw new InvalidPositionException("\nInvalid format. Please enter two positive integers within the plateau bounds and a direction separated by spaces.\n");
+            }
 
             Enum.TryParse(parts[2], out CompassDirection direction);
 
