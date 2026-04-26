@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MarsRover.Console.Data
 {
-    public record Position 
+    public class Position 
     {
         public int X { get; set; }
         public int Y { get; set; }
@@ -19,5 +19,17 @@ namespace MarsRover.Console.Data
             Y = y;
             Facing = facing;
         }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj is Position other)
+            {
+                return X == other.X && Y == other.Y && Facing == other.Facing;
+            }
+
+            return false;
+        }
+
+        public override int GetHashCode() => HashCode.Combine(X, Y, Facing);
     }
 }
