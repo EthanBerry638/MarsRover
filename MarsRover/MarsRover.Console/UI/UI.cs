@@ -92,8 +92,9 @@ namespace MarsRover.Console.UI
 
         private bool ShouldExit()
         {
-            Write("\nWould you like to deploy another rover? (Y/N): \n");
+            Write("\nWould you like to deploy another rover? (Y/N):");
             string? input = ReadLine()?.ToUpper();
+            WriteLine();
             return input == "N" || input == "EXIT";
         }
     }
