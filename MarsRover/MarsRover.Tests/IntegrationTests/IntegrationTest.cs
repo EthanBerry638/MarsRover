@@ -5,7 +5,7 @@ using MarsRover.Console.Parsers;
 using MarsRover.Console.Plateaus;
 using MarsRover.Console.Rovers;
 
-namespace MarsRover.Tests
+namespace MarsRover.Tests.IntegrationTests
 {
     public class IntegrationTests
     {

@@ -4,7 +4,7 @@ using MarsRover.Console.InstructionExecutor;
 using MarsRover.Console.Plateaus;
 using MarsRover.Console.Rovers;
 
-namespace MarsRover.Tests
+namespace MarsRover.Tests.InstructionManagerTests
 {
     public class InstructionManagerTests
     {

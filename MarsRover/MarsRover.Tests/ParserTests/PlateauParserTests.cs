@@ -2,7 +2,7 @@
 using MarsRover.Console.Data;
 using MarsRover.Console.Parsers;
 
-namespace MarsRover.Tests;
+namespace MarsRover.Tests.ParserTests;
 
 public class PlateauParserTests
 {

@@ -3,7 +3,7 @@ using MarsRover.Console.Data;
 using MarsRover.Console.Directions;
 using MarsRover.Console.Parsers;
 
-namespace MarsRover.Tests;
+namespace MarsRover.Tests.ParserTests;
 
 public class PositionParserTests
 {
